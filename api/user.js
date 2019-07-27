@@ -5,7 +5,7 @@ module.exports = {
       url: '/IntegralUser/user'
     })
   },
-  userAddressList () {                     //用户地址列表
+  userAddressList () {
     return request({
       url: '/IntegralAddress/index'
     })

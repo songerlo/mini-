@@ -24,7 +24,7 @@
   <view class='goodsconfirm-details'>
     <view class='goods-infor-warp'>
       <view class='goods-infor-warp-left'>
-        <image src='{{goodsData.ig_images}}'></image>
+        <image src='{{goodsData.ig_images?goodsData.ig_images:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558948639698&di=9c03d7b476f835e1b9ff6b12482cf806&imgtype=0&src=http%3A%2F%2Fimage.tupian114.com%2F20120327%2F03255887.jpg"}}'></image>
       </view>
       <view class='goods-info-font'>
         <view class='goods-info-top'>

@@ -15,7 +15,7 @@ module.exports = {
       }
     })
   },
-  veriryVip(vip_code) {                          //vip认证接口
+  veriryVip(vip_code) {
     return request({
       url: '/IntegralUser/toVip',
       method: 'POST',
