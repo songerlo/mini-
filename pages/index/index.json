@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
+    "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index",
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
+    "goods-item": "/components/goods-item/goods-item",
+    "commitment": "/components/commitment/commitment"
+  },
+  "navigationBarTitleText": "会员商城"
+}

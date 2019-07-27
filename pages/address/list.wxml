@@ -1,0 +1,16 @@
+<!--pages/address/list.wxml-->
+<view class='address-list' wx:if="{{addressList.length>0}}">
+  <block wx:for='{{addressList}}' wx:key='{{index}}'>
+    <address-item addressItem="{{item}}"></address-item>
+  </block>
+</view>
+<view wx:else class='address-default'>
+  <image src='/source/image/address-default.png'></image>
+  <view class='tip'>还没有添加地址哦！</view>
+</view>
+<view class='add-address'>
+  <van-button bind:click="addAddress">
+  <image src='/source/image/icon-add.png' class='add-img'></image>
+    <text>新建收货地址</text> 
+  </van-button>
+</view>

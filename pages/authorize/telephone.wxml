@@ -1,0 +1,10 @@
+<!--pages/authorize/telephone.wxml-->
+
+<view class='container'>
+  <view class='avatar'></view>
+  <view class='author-desc'>允许微信授权后，可体验更多功能</view>
+  <view class='line'></view>
+  <view class='title2'>申请获取以下权限</view>
+  <view class='desc2'>· 获得你的公开信息（昵称、头像等）</view>
+  <van-button class='btn' size="large" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权登录</van-button>
+</view>

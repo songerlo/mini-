@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm"></phone-confirm>
+<!-- <block wx:for="{{list}}" wx:key="{{index}}">
+  <goods-item goodsItem="{{item}}"></goods-item>
+</block> -->
+

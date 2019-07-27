@@ -1,0 +1,35 @@
+<!--pages/recharge/index.wxml-->
+<view class='recharge-container'>
+  <view class='recharge-select-warp'>
+    <view class='recharge-title'>请选择充值积分</view>
+    <view class='recharge-select-list'>
+      <block wx:for='{{rechargeList}}' wx:key="{{index}}">
+        <view class='recharge-select-item {{item.isSelect && !isFocus ? "active" : "default"}}' data-index="{{index}}" bindtap='tapSelect' data-isselect="{{item.isSelect}}">
+          <text>{{item.integral}}积分</text>
+          <text>售价{{item.price}}</text>
+        </view>
+      </block>
+      <view class='recharge-select-item {{isFocus ? "input-active" : "default"}} ' data-index="{{rechargeList.length}}">
+        <input placeholder='其他数额' bindfocus="focus" bindblur="blur" bindinput="input" type="number" disabled="{{isSelect}}" value='{{inputAmount ? inputAmount : ""}}'></input>
+      </view>
+      <view class='recharge-select-item'>
+      </view>
+    </view>
+    <view class='pay-warp'>
+      <view class='pay-tip'>需要支付人民币</view>
+      <view class='pay-font'>
+        <text>{{payAmount}}</text>元</view>
+    </view>
+  </view>
+  <view class='notice'>
+    <text>注意事项</text>
+    <text>1.本次最多充值50000积分；</text>
+    <text>2.其他数额请输入1-50000之间的整数。</text>
+  </view>
+  <view class='recharge-btn'>
+    <van-button bindclick="instantRecharge">立即充值</van-button>
+    <view class='recharge-recorde'>
+      <text bindtap='goRecorde'>查看充值记录</text>
+    </view>
+  </view>
+</view>

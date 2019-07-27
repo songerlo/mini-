@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "goods-item": "/components/goods-item/goods-item"
+  },
+  "navigationBarBackgroundColor": "#F5F5F5",
+  "navigationBarTitleText": "商品列表"
+}

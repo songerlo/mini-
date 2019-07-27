@@ -1,0 +1,3 @@
+/* components/orders-item/orders-define.wxss */
+.define{ width: 100%; margin: 40rpx auto; text-align: center;}
+.define .txt{ line-height: 60rpx; color: #666; font-size: 28rpx;}

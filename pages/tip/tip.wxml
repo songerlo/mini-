@@ -1,0 +1,46 @@
+<!--pages/tip/tip.wxml-->
+<view class='tip-container'>
+  <block wx:if="{{pageState == 1}}">
+    <view class='tip'>
+      <image src='/source/image/icon-success.png' class='tip-img'></image>
+      <text class='tip-msg'>兑换成功！</text>
+      <view class='tip-btn'>
+        <van-button  class='btn-linear' bindtap='goExDetail'>查看兑换详情</van-button>
+        <van-button class='default-btn' bindtap='goBack'>继续兑换</van-button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{pageState == 2}}">
+    <view class='tip'>
+      <image src='/source/image/icon-fail.png' class='tip-img'></image>
+      <text class='tip-msg'>兑换失败！</text>
+      <text class='tip-result' wx:if="{{msg}}">失败原因：{{msg}}</text>
+      <view class='tip-btn'>
+        <van-button class='btn-linear' bindtap='goBack'>继续兑换</van-button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{pageState == 3}}">
+    <view class='tip'>
+      <image src='/source/image/icon-success.png' class='tip-img'></image>
+      <text class='tip-msg'>充值成功！</text>
+      <view class='tip-btn'>
+        <van-button class='btn-linear' >去兑换</van-button>
+        <van-button class='default-btn' bind:click="chongzhi">继续充值</van-button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{pageState == 4}}">
+    <view class='tip'>
+      <image src='/source/image/icon-fail.png' class='tip-img'></image>
+      <text class='tip-msg'>充值失败！</text>
+      <text class='tip-result' wx:if="{{msg}}">失败原因：{{msg}}</text>
+      <view class='tip-btn'>
+        <van-button class='default-btn' bind:click="chongzhi">继续充值</van-button>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view>请传入正确的参数{state: 1||2||3||4,msg: ''}</view>
+  </block>
+</view>

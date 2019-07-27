@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "查看启动日志",
+  "usingComponents": {
+    "phone-confirm": "/components/phone-confirm/phone-confirm",
+    "goods-item": "/components/goods-item/goods-item"
+  }
+}

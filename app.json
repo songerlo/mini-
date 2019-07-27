@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/order/detail",
+    "pages/order/list",
+    "pages/logs/logs",
+    "pages/tip/tip",
+    "pages/goodsList/goodList",
+    "pages/goodsDetail/goodsDetail",
+    "pages/goodsConfirm/goodsConfirm",
+    "pages/address/list",
+    "pages/address/edit",
+    "pages/recharge/recode",
+    "pages/authorize/telephone",
+    "pages/recharge/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "会员商城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/source/tabbar/index.png",
+        "selectedIconPath": "/source/tabbar/index-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/source/tabbar/user.png",
+        "selectedIconPath": "/source/tabbar/user-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

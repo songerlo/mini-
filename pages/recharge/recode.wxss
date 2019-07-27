@@ -1,0 +1,27 @@
+/* pages/recharge/recode.wxss */
+.list-container {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.recode-detail{
+  font-size: 34rpx;
+  font-weight: bold;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.recode-bottom {
+  font-size: 24rpx;
+  color: #959595;
+  height: 30rpx;
+  line-height: 30rpx;
+}

@@ -1,0 +1,69 @@
+<!--pages/user/user.wxml-->
+<view class='user'>
+  <view class='user_box'>
+    <view class='info'>
+      <view class='user_info'>
+        <view class='btn_gift'><image class='icon_gift' src='/source/image/icon_gift.png'/> 积分转赠</view>
+        <view class='pic'>
+          <image class='user_pic' src="{{ userInfo.avatarUrl==='' ? '/source/image/1.jpg' : userInfo.avatarUrl }}" /> 
+          <image class='icon_v' src='/source/image/icon_v.png'/>
+        </view>
+        <view class='txt'>
+          <view wx:if="{{hasUserInfo}}" class='name'>{{userInfo.nickName}}</view>
+          <button wx:else class='name' bindgetuserinfo="getUserInfo" open-type="getUserInfo">点击设置昵称<image class='icon_alert' src='/source/image/icon_alert.png'/></button>
+          <view class='jifen'> <image class='icon_jifen' src='/source/image/icon_jifen.png'/> 9658</view>
+        </view>
+      </view>
+      <view class='menu'>
+        <view class='item' bindtap='tapOrder' data-type='0'>
+          <image src='/source/image/icon_order.png'/>
+          <text class='txt'>全部订单</text>
+        </view>
+        <view class='item' bindtap='tapOrder'  data-type='1'>
+          <image src='/source/image/icon_unpay.png'/>
+          <text class='txt'>待消耗</text>
+        </view>
+        <view class='item' bindtap='tapOrder'  data-type='2'>
+          <image src='/source/image/icon_unship.png'/>
+          <text class='txt'>待发货</text>
+        </view>
+      </view>
+  </view>
+  </view>
+  <view class='list'>
+    <view class='item' bindtap='tabRecharge'>
+      <view class='item_l'>积分充值</view>
+      <view class='item_r'> 
+        <text class="txt">会员充值，享5倍积分</text>
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png'/>
+      </view>
+    </view>
+     <view class='item' bindtap='tabRecode'>
+      <view class='item_l'>会员充值</view>
+      <view class='item_r'> 
+        <text class="txt">您的会员待激活</text>
+       <image class='icon_arrow' src='/source/image/icon_arrowR.png'/>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='item' bindtap='tabAddress'>
+      <view class='item_l'>地址管理</view>
+      <view class='item_r'> 
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png'/>
+      </view>
+    </view>
+     <view class='item'>
+      <view class='item_l'>帮助中心</view>
+      <view class='item_r'> 
+       <image class='icon_arrow' src='/source/image/icon_arrowR.png'/>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='item_l'>联系客服</view>
+      <view class='item_r'> 
+       <image class='icon_arrow' src='/source/image/icon_arrowR.png'/>
+      </view>
+    </view>
+  </view>
+</view>

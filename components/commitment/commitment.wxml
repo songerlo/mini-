@@ -1,0 +1,9 @@
+<!--components/commitment/commitment.wxml-->
+<view class='index-laber'>
+    <block wx:for="{{laberList}}" wx:key="{{index}}">
+      <view class='laber-item'>
+        <image src='{{item.image}}'></image>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>

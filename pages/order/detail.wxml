@@ -1,0 +1,43 @@
+<!--pages/order/detail.wxml-->
+<view class='order_detail'>
+  <view class='order_status'>
+    <image class='pic' src='/source/image/icon_order_status.png'/>
+    <text class='txt'>订单已取消</text>
+  </view>
+  <view class='address'>
+    <image class='icon_address' src='/source/image/icon_address.png'/>
+    <view class='txt'>
+      <view class='user'>
+        <text class='name'>晨晨</text>
+        <text class='tel'>132****6629</text>
+        <text class='status'>默认</text>
+      </view>
+      <view class=''>河南省郑州市高新区翠竹街总部企业基地3号
+楼象聚集团四层设计部靠窗户的工位</view>
+    </view>
+     <image class='icon_arrow' src='/source/image/icon_arrowR.png'/>
+  </view>
+  <view class='goods'>
+    <view class='info'>
+      <view class='pic'>
+        <image  src='/source/image/1.jpg'/>
+      </view>
+      <view class='txt'>
+        <view class='title'>Apple Macbook Pro 13.3【带触控栏】
+Corei5 8G 256G SSD 深空灰</view>
+        <view class='subtitle'>四核八代 i5 8G 256G 13.3英寸灰</view>
+        <view class='pirce'>88积分</view>
+      </view>
+    </view>
+    <view class='btn_c'>
+      <navigator class='btn'>联系客服</navigator>
+    </view>
+  </view>
+  <view class='order_info'>
+    <text>兑换编号：165651134654</text>
+    <text>下单时间：201905140956</text>
+    <text>兑换时间：201905140956</text>
+    <text>配送方式：快递</text>
+    <text>消耗积分：88</text>           
+  </view>
+</view>

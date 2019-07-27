@@ -1,0 +1,25 @@
+/* pages/user/user.wxss */
+.user{ width: 100%;}
+.user .user_box{ width: 100%; background: #FFB423; margin-bottom: 45rpx;}
+.user .info{ position: relative; top: 30rpx; width: 94%; margin: 0 auto; padding: 20rpx 36rpx; background: #fff; border-radius: 10rpx;}
+.user .info .user_info{ position: relative; display: flex; margin-bottom: 20rpx; }
+.user .info .user_info .btn_gift{ position: absolute; right: -36rpx; top: 60rpx;background: #FFB423; width: 190rpx; height: 50rpx; line-height: 50rpx; border-radius: 50rpx 0 0 50rpx; color: #fff; font-size: 24rpx; text-align: center;}
+.user .info .user_info .btn_gift .icon_gift{ width: 40rpx; height: 29rpx; vertical-align: middle; }
+.user .info .user_info .pic{ position: relative; margin-right: 10rpx;}
+.user .info .user_info .pic .user_pic{ width: 112rpx; height: 112rpx; border-radius: 112rpx;}
+.user .info .user_info .pic .icon_v{ position: absolute; bottom: 0; right: 0; width: 34rpx; height: 34rpx;}
+.user .info .user_info .txt .icon_alert{ width: 24rpx; height: 24rpx;}
+.user .info .user_info .txt .icon_jifen{ width: 24rpx; height: 26rpx;} 
+.user .info .user_info .txt .name{ border: 0; background: none; line-height: 36rpx; color: #25294D; font-size: 36rpx;}
+.user .info .user_info .txt .jifen{ line-height: 36rpx; color: #959595; font-size: 32rpx;}
+.user .info .menu{display: flex; align-items: center;  justify-content: space-between; }
+.user .info .menu .item { width: 33%; border-right: 1rpx solid #F0F0F0; text-align: center;}
+.user .info .menu .item:last-child{ border-right: 0;}
+ .user .info .menu .item image{ width: 60rpx; height: 60rpx;}
+ .user .info .menu .item .txt{ display: block; line-height: 36rpx; color: #959595; font-size: 26rpx;}
+.user .list{ width: 94%; margin: 0 auto; background: #fff; border-radius: 10rpx;}
+.user .list .item{ display: flex; align-items: center;  justify-content: space-between;  padding: 0 30rpx; height: 100rpx; line-height: 100rpx; margin-top: 15rpx; border-bottom: 1rpx solid #E5E5E5;}
+.user .list .item:last-child{ border-bottom: 0;}
+.user .list .item .item_l{ color: #353535; font-size: 32rpx; font-weight: bold;}
+.user .list .item .item_r .icon_arrow{ width: 13rpx; height: 24rpx; margin-left: 15rpx;}
+.user .list .item .item_r .txt{ color: #F57D7D; font-size: 24rpx;}

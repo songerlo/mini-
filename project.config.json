@@ -1,0 +1,76 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.0",
+	"appid": "wx933b54dcc211488e",
+	"projectname": "mp_integral_mall",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "recode",
+					"pathName": "pages/recharge/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "telephone",
+					"pathName": "pages/authorize/telephone",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "goodsConfirm",
+					"pathName": "pages/goodsConfirm/goodsConfirm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "addresslist",
+					"pathName": "pages/address/list",
+					"scene": null
+				}
+			]
+		}
+	}
+}

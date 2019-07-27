@@ -1,0 +1,24 @@
+<!--pages/order/list.wxml-->
+<van-tabs active="{{ active }}" color="#FFB423" tab-class="tab">
+  <van-tab title="全部">
+    <view class='list'>
+      <block wx:for="{{ordersList}}" wx:key="{{index}}">
+        <orders-item params="{{item}}"></orders-item>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="待消耗">
+    <orders-define></orders-define>
+  </van-tab>
+  <van-tab title="待发货">
+    <orders-item></orders-item>
+  </van-tab>
+  <van-tab title="待收货">
+    <orders-item></orders-item>
+  </van-tab>
+  <van-tab title="已取消">
+    <orders-item></orders-item>
+  </van-tab>
+</van-tabs>
+
+

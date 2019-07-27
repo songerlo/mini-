@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-stepper": "/miniprogram_npm/vant-weapp/stepper/index",
+    "van-icon": "/miniprogram_npm/vant-weapp//icon/index",
+    "commitment": "/components/commitment/commitment"
+  },
+  "navigationBarTitleText": "商品详情"
+}

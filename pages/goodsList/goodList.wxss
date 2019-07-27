@@ -1,0 +1,64 @@
+/* pages/goodsList/goodList.wxss */
+page{
+  padding: 24rpx;
+}
+.goodslist-container{
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+.goodslist-top{
+  width: 100%;
+  height: 90rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.goodslist-top-select{
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+}
+.goodslist-top-select text{
+  font-size: 28rpx;
+  color: #666666;
+}
+.triangle{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 20rpx;
+  margin-left: 9rpx;
+}
+.triangle-border-up{
+  width:0;
+  height:0;
+  border-width:0 9rpx 8rpx;
+  border-style:solid;
+  border-color:transparent transparent #999999;
+  position:relative;
+}
+.triangle_border_down{
+  width:0;
+  height:0;
+  border-width:8rpx 9rpx 0;
+  border-style:solid;
+  border-color:#999999 transparent transparent;
+  position:relative;
+}
+.triangle-up-active{
+  border-color:transparent transparent #fe6d2e;
+}
+.triangle-down-active{
+  border-color:#fe6d2e transparent transparent;
+}
+.goodslist-bottom{
+  text-align: center;
+  font-size: 22rpx;
+  color: #999999;
+  padding: 60rpx 0;
+}
+.active text{
+  color: #FE6D2E!important;
+}

@@ -1,0 +1,43 @@
+.container {
+ padding: 0 5%;
+
+}
+.avatar {
+  width: 158rpx;
+  height: 158rpx;
+  border-radius: 79rpx;
+  background: #FED431;
+  margin: 90rpx auto;
+}
+
+.author-desc {
+  color: #333333;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.line {
+  height: 100rpx;
+  border-bottom: 2rpx solid #F2F2F2;
+}
+
+.title2 {
+  margin-top: 20rpx;
+  color: #333333;
+}
+
+.desc2 {
+  margin-top: 20rpx;
+  color: #999999;
+  margin-bottom: 20rpx;
+}
+
+.btn {
+  margin-top: 40rpx;
+  height: 90rpx;
+}
+.container button{
+  margin-top: 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}

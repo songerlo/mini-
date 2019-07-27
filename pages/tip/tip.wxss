@@ -1,0 +1,70 @@
+/* pages/tip/tip.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  padding: 24rpx 40rpx;
+}
+.tip-container{
+  padding-top: 140rpx;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+.tip{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tip-img{
+  width: 195rpx;
+  height: 211rpx;
+}
+.tip-msg{
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.tip-btn{
+  margin-top: 150rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tip-btn button{
+  width: 500rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 33rpx;
+  letter-spacing: 2rpx;
+  font-weight: 500;
+  
+}
+.default-btn{
+  margin-top: 40rpx;
+}
+.default-btn button{
+  color: #FFB423;
+  border: 2rpx solid #FFB423;
+  background-color:#ffffff;
+}
+.active-btn{
+  background-image: linear-gradient(0deg, #FED431, #FFB423);
+  color: #ffffff;
+}
+.tip-result{
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 28rpx;
+  margin-top: 32rpx;
+}
+.btn-hover{
+  background-color: #eeeeee!important;
+  width: 400rpx;
+}
+.btn-linear button{
+  border-radius: 10rpx;
+  overflow: hidden;
+  background-image: linear-gradient(0deg, #FED431, #FFB423);
+  color: #ffffff;
+}
