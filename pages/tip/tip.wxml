@@ -6,7 +6,7 @@
       <text class='tip-msg'>兑换成功！</text>
       <view class='tip-btn'>
         <van-button  class='btn-linear' bindtap='goExDetail'>查看兑换详情</van-button>
-        <van-button class='default-btn' bindtap='goBack'>继续兑换</van-button>
+        <van-button class='default-btn' bindtap='goBackIndex'>继续兑换</van-button>
       </view>
     </view>
   </block>

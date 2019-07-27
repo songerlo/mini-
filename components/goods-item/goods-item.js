@@ -26,7 +26,7 @@ Component({
   methods: {
     goGoodsDetails(e) {
       app.navigateTo({
-        url: `/pages/goodsDetail/goodsDetail?id=${e.currentTarget.dataset.id}`
+        url: `/pages/goodsDetail/goodsDetail?id=${e.currentTarget.dataset.id}&sid=${e.currentTarget.dataset.sid}`
       })
     }
   },

@@ -1,32 +1,60 @@
 // pages/address/list.js
 const app = getApp();
 const Api = app.api;
+import { userAddressList } from '../../api/user.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    addressList : []
+    addressList : [],
+    page: 1,
+    finished: false,
+    select: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad(options) {
+    this.select = false
+    if (Reflect.has(options, 'select')) {
+      this.setData({
+        select: true
+      })
+    }
+  },
+  onShow: function () {
+    this.setData({
+      addressList: [],
+      page: 1
+    })
     this.init();
   },
   init () {
     this.loadAddressList();
   },
   loadAddressList () {
-    Api.userApi.userAddressList()
+    if (this.data.finished) {
+      return
+    }
+    userAddressList({
+      page: this.data.page,
+      pageSize: 10
+    })
       .then(res => {
-        console.log(res)
         if (res.code == 0) {
-          this.setData({
-            addressList: res.data.data
-          })
+          if (res.data.data.length > 0) {
+            this.setData({
+              addressList: [...this.data.addressList, ...res.data.data],
+              page: this.data.page + 1
+            })
+          } else {
+            this.setData({
+              finished: !0
+            })
+          }
         }
       })
   },
@@ -36,14 +64,6 @@ Page({
   onReady: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -69,7 +89,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.init()
   },
 
   /**
@@ -78,7 +98,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  addAddress () {
+  addAddress (e) {
     app.navigateTo({
       url: '/pages/address/edit'
     })

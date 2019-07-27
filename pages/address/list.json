@@ -1,7 +1,6 @@
 {
   "usingComponents": {
-    "address-item": "/components/address-item/address-item",
-    "van-button": "/miniprogram_npm/vant-weapp/button/index"
+    "address-item": "/components/address-item/address-item"
   },
   "navigationBarBackgroundColor": "#F5F5F5",
   "navigationBarTitleText": "地址管理"

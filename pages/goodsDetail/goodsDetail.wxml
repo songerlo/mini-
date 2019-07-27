@@ -6,7 +6,7 @@
         current="{{swiperSetting.current}}" bindchange="swiperChange">
         <block wx:for="{{goodsData.ig_images}}" wx:key="{{index}}">
           <swiper-item>
-            <image src="{{item.image}}" class="slide-image" bindtap='previewSwiperImage' data-src="{{item.image}}" />
+            <image src="{{item}}" class="slide-image" bindtap='previewSwiperImage' data-src="{{item}}" />
           </swiper-item>
         </block>
       </swiper>
@@ -59,7 +59,8 @@
   </view>
   <view class='goods-details'>
     <view class='adv'>
-      <image src='https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1566006158,2438571764&fm=173&app=49&f=PNG?w=218&h=146&s=5A22A0403ECF971B9822511F030050EA'></image>
+    <rich-text nodes="{{goodsData.ig_description}}"></rich-text>
+      <!-- <image src='https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1566006158,2438571764&fm=173&app=49&f=PNG?w=218&h=146&s=5A22A0403ECF971B9822511F030050EA'></image> -->
     </view>
   </view>
   <view class='goods-detail-bottom'>

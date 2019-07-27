@@ -1,4 +1,88 @@
 /* pages/address/edit.wxss */
-.edit button{
-  
+.edit {
+  background-color: #ffffff;
+  min-height: 100vh;
+  margin-top: 24rpx;
+}
+.add-address{
+  width: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 80rpx;
+}
+.add-address button{
+  width: 700rpx;
+  height: 88rpx;
+  background-image: linear-gradient( #FED431, #FFB423);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rpx;
+}
+.delete {
+  padding-top: 60px;
+  color: #FE6D2E;
+  text-align: center;
+  font-size: 28rpx;
+}
+.add-address button text{
+  padding-left:10rpx;
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+.add-img{
+  width: 38rpx;
+  height: 38rpx;
+}
+.address-default{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.address-default image{
+  width: 374rpx;
+  height: 288rpx;
+}
+.address-default .tip{
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 40rpx;
+  text-align: center;
+}
+.cell__title {
+  flex: 0.5;
+}
+.default {
+  display: flex;
+  padding:  16px;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+.default-1 {
+  font-size: 30rpx;
+  color: #333333;
+}
+.default-2 {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 15rpx;
+}
+
+.area .area-title{
+  flex: 0.45;
+}
+.area .area-value {
+  flex: 1.5;
+  text-align: left;
+  color: #333333;
 }

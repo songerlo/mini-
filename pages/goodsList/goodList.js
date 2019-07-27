@@ -1,5 +1,5 @@
 // pages/goodsList/goodList.js
-const Api = getApp().api;
+import { moduleList } from '../../api/goods.js'
 Page({
 
   /**
@@ -23,16 +23,13 @@ Page({
   },
   init (id) {
     this.page = 1;
-    this.gm_id = id;
+    this.igm_id = id;
     this.loadList();
   },
   loadList () {
-    wx.showLoading({
-      title: '加载中...',
-    })
     let isTap = this.data.isTap, defaultSetting = this.data.defaultSetting;
-    Api.goodsApi.moduleList({
-      gm_id: this.gm_id,
+    moduleList({
+      igm_id: this.igm_id,
       sort: isTap == 0 ? 0 : isTap == 1 && defaultSetting.highVolume ? 1 : isTap == 1 && !defaultSetting.highVolume ? 2 : isTap == 2 && !defaultSetting.highintegral ? 3 : 4,
       page: this.page,
       pageSize: 20
@@ -45,7 +42,7 @@ Page({
             this.setData({
               goodslist: [...res.data.goods.data, ...this.data.goodslist]
             })
-          } 
+          }
           if (res.data.goods.data.length < 20) {
             this.setData({
               showEnd: !0

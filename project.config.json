@@ -6,17 +6,25 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"nodeModules": true,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
+	"libVersion": "2.0.4",
 	"appid": "wx933b54dcc211488e",
-	"projectname": "mp_integral_mall",
+	"projectname": "mp_inergral",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -41,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -55,6 +63,27 @@
 					"name": "telephone",
 					"pathName": "pages/authorize/telephone",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/goodsConfirm/goodsConfirm",
+					"pathName": "pages/goodsConfirm/goodsConfirm",
+					"query": "id=844&sid=3918&goodsCount=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/address/list",
+					"pathName": "pages/address/list",
+					"query": "id=844&sid=3918&goodsCount=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/address/edit",
+					"pathName": "pages/address/edit",
+					"query": "id=844&sid=3918&goodsCount=1",
 					"scene": null
 				}
 			]

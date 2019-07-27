@@ -1,7 +1,9 @@
 // pages/goodsDetail/goodsDetail.js
 const utils = require("../../utils/util.js");
 const app = getApp();
-const Api = app.api;
+// const Api = app.api;
+import { goodsDetails, chkStock } from '../../api/goods.js'
+import { userState } from '../../api/user.js'
 Page({
 
   /**
@@ -19,7 +21,7 @@ Page({
     },
     goodsCount: 1,                                          //商品数量
     userInfo: {                                             //用户信息
-      integral: 70
+      integral: 0
     },
     goodsData: {
       ig_id: 0,                                            //商品id
@@ -38,18 +40,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (Reflect.has(options, 'id')) this.init(options.id);
+    if (Reflect.has(options, 'id')) this.init(options);
   },
-  init (id) {
-    this.loadDetail(id);
+  init(options) {
+    this.options = options
+    this.loadDetail(options);
     this.checkState();
   },
-  loadDetail (id) {
-    Api.goodsApi.goodsDetails(id)
+  loadDetail(options) {
+    goodsDetails({
+      ig_id: options.id,
+      ig_sku_id: options.sid
+    })
       .then(res => {
         if (res.code == 0) {
           this.goodsPrice = +res.data.ig_price;
-          
           this.setData({
             goodsData: res.data,
             goodsPrice: this.goodsPrice
@@ -58,7 +63,7 @@ Page({
       })
   },
   checkState () {
-    Api.userApi.userState()
+    userState()
       .then(res => {
         if (res.code == 0) {
           this.userScore = +res.data.u_integral
@@ -114,7 +119,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    Api.goodsApi.goodsShare(this.data.goodsData.ig_id)
+    return {
+      title: this.data.goodsData.ig_name
+    }
   },
   swiperChange (e) {
     this.setData({
@@ -131,11 +138,15 @@ Page({
   },
   tapBuy () {
     app.navigateTo({
-      url: `/pages/goodsConfirm/goodsConfirm?id=${this.data.goodsData.ig_id}&goodsCount=${this.data.goodsCount}`
+      url: `/pages/goodsConfirm/goodsConfirm?id=${this.options.id}&sid=${this.options.sid}&goodsCount=${this.data.goodsCount}`
     })
   },
   goodsCountChange (e) {
-    Api.goodsApi.chkStock(this.data.goodsData.ig_id, e.detail)
+    chkStock({
+      ig_id: this.options.id,
+      ig_sku_id: this.options.sid,
+      num: e.detail
+    })
       .then(res => {
         if (res.code == 0) {
           this.setData({

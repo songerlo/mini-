@@ -1,7 +1,7 @@
 <!--pages/address/list.wxml-->
 <view class='address-list' wx:if="{{addressList.length>0}}">
   <block wx:for='{{addressList}}' wx:key='{{index}}'>
-    <address-item addressItem="{{item}}"></address-item>
+    <address-item addressItem="{{item}}" select='{{select}}'></address-item>
   </block>
 </view>
 <view wx:else class='address-default'>

@@ -5,16 +5,16 @@
       <image src='/source/image/icon-address.png'></image>
     </view>
     <view class='goodsconfirm-address-middle'>
-      <block wx:if="{{!address.name}}">
+      <block wx:if="{{!defaultAddress.name}}">
         <view class='creatAddress'>创建收货地址</view>
       </block>
       <block wx:else>
         <view class='address-name'>
-          <text>{{address.name}}</text>
-          <text>{{address.phone}}</text>
-          <text class='default'>默认</text>
+          <text>{{defaultAddress.name}}</text>
+          <text>{{defaultAddress.phone}}</text>
+          <text class='default' wx:if="{{defaultAddress.is_default}}">默认</text>
         </view>
-        <view class='address'>{{address.address}}</view>
+        <view class='address'>{{defaultAddress.address}}</view>
       </block>
     </view>
     <view class='goodsconfirm-address-right' bindtap='goAddressList'>
@@ -24,7 +24,7 @@
   <view class='goodsconfirm-details'>
     <view class='goods-infor-warp'>
       <view class='goods-infor-warp-left'>
-        <image src='{{goodsData.ig_images?goodsData.ig_images:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558948639698&di=9c03d7b476f835e1b9ff6b12482cf806&imgtype=0&src=http%3A%2F%2Fimage.tupian114.com%2F20120327%2F03255887.jpg"}}'></image>
+        <image src='{{goodsData.ig_images}}' class="goodsImg"></image>
       </view>
       <view class='goods-info-font'>
         <view class='goods-info-top'>
@@ -69,4 +69,4 @@
     </view>
   </view>
 </view>
-<phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm" phoneNum="{{goodsData.address.phone}}"></phone-confirm>
+<phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm" phoneNum="{{userInfo.u_cellphone}}"></phone-confirm>

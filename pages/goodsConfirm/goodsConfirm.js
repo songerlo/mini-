@@ -1,13 +1,15 @@
 // pages/goodsConfirm/goodsConfirm.js
 const app = getApp();
-const Api = app.api;
+// const Api = app.api;
+import { goodsExchange, createOrder, doPay } from '../../api/goods.js'
+import { userState } from '../../api/user.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    address: {                                      //默认地址
+    defaultAddress: {                                      //默认地址
       a_id: '',                                       
       name: '',
       phone: '',
@@ -25,6 +27,7 @@ Page({
       ig_price: '',                                        //商品兑换积分  
       ig_images: [],                                       //商品图片数组
       ig_pk_price: [],                                     //商品比价数组
+      address: []
     },
     showPhoneConfirm : !1,                                 //手机号验证弹出框
     userScore: 0,                                          //用户积分
@@ -36,28 +39,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (Reflect.has(options, 'id') && Reflect.has(options, 'goodsCount')) this.init(options.id, options.goodsCount);
+    if (Reflect.has(options, 'id') && Reflect.has(options, 'goodsCount')) this.init(options);
+    this.setData({
+      userInfo: getApp().globalData.userInfo
+    })
   },
-  init(id, goodsCount) {
-    this.goodsCount = goodsCount;
-    this.loadDetails(id, goodsCount);
+  init(options) {
+    this.options = options
+    this.loadDetails(options);
     this.checkState();
   },
-  loadDetails(id, goodsCount) {
-    Api.goodsApi.goodsExchange(id, goodsCount)
+  loadDetails(options) {
+    goodsExchange({
+      ig_id: options.id,
+      ig_sku_id: options.sid,
+      num: options.goodsCount
+    })
       .then(res => {
         if (res.code == 0) {
           this.setData({
-            goodsData: res.data
-          })
-          if (!app.globalData.isSelectAddress) {
+            goodsData: res.data,
             defaultAddress: res.data.address
-          }
+          })
+          // if (!app.globalData.isSelectAddress) {
+          //   defaultAddress: res.data.address
+          // }
         }
       })
   },
   checkState(){
-    Api.userApi.userState()
+    userState()
       .then(res => {
         console.log(res)
       })
@@ -73,11 +84,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (this.data.goodsData.u_id && this.data.goodsData.num)this.init(this.data.goodsData.u_id, this.data.goodsData.num);
-    if (app.globalData.isSelectAddress) {
+    // if (this.data.goodsData.u_id && this.data.goodsData.num)this.init(this.data.goodsData.u_id, this.data.goodsData.num);
+    // if (app.globalData.isSelectAddress) {
+    //   this.setData({
+    //     defaultAddress: app.globalData.address
+    //   })
+    // }
+    if (getApp().globalData.address !== null) {
       this.setData({
         defaultAddress: app.globalData.address
       })
+      getApp().globalData.address = null
     }
   },
 
@@ -112,12 +129,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    Api.goodsApi.goodsShare(this.data.goodsData.ig_id)
-  },
+  // onShareAppMessage: function () {
+  //   Api.goodsApi.goodsShare(this.data.goodsData.ig_id)
+  // },
   goAddressList () {
     app.navigateTo({
-      url: '/pages/address/list'
+      url: '/pages/address/list?select=1'
     })
   },
   inputMessage (e){
@@ -133,19 +150,24 @@ Page({
       })
       return;
     }
-    Api.goodsApi.createOrder({
-      g_id: this.data.goodsData.ig_id,
+    createOrder({
+      ig_id: this.data.goodsData.ig_id,
+      ig_sku_id: this.data.goodsData.ig_sku_id,
       num: this.data.goodsData.num,
-      a_id: this.data.address.a_id,
+      a_id: this.data.defaultAddress.a_id,
       message: this.data.customerMessage
     }).then(res => {
       if (res.code == 0) {
-        if (res.data.io_status == 0) {
-          this.io_sn = res.data.io_sn //获取订单编号
-          this.setData({
-            showPhoneConfirm: !0
-          })
-        }
+        this.orderSn = res.data.orderSn //获取订单编号
+        getApp().globalData.orderSn = res.data.orderSn
+        this.setData({
+          showPhoneConfirm: !0
+        })
+        // if (res.data.io_status == 0) {
+        //   this.setData({
+        //     showPhoneConfirm: !0
+        //   })
+        // }
       } else {
         wx.showToast({
           title: res.message,
@@ -155,15 +177,15 @@ Page({
     })
   },
   hidePhoneConfirm (e) {
-    if (e.detail.checkPhone) {
-      this.doPay();
-    }
+    // if (e.detail.checkPhone) {
+    //   this.doPay();
+    // }
     this.setData({
       showPhoneConfirm: !1
     })
   },
   doPay () {
-    Api.goodsApi.doPay(this.io_sn)
+    doPay(this.orderSn)
       .then(res => {
         if (res.code == 0) {
           this.navigateTo({

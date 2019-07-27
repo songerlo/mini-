@@ -18,7 +18,7 @@
     <view class='font-1'>送您积分了</view>
     <view class='font-2'>快去兑换礼品吧</view>
     <view class='btn-alert'>
-      <van-button bind:click='hideAlert'>我知道了</van-button>
+      <van-button bind:click='konw'>我知道了</van-button>
     </view>
   </view>
   <image src='/source/image/icon-shutdown.png' class='shut-down'  bindtap='hideAlert'></image>
@@ -40,7 +40,7 @@
 </view>
 <!-- 页面 -->
 <view class='index-container'>
-  <view class='index-top'>
+  <view class='index-top' wx-if='{{swiperList.length > 0}}'>
     <swiper class="swiper-box" indicator-dots="{{swiperSetting.showDots}}" autoplay="{{swiperSetting.dots}}" interval="{{swiperSetting.interval}}" duration="{{swiperSetting.duration}}" indicator-color="{{swiperSetting.indicatorColor}}" indicator-active-color="{{swiperSetting.indicatorActiveColor}}">
       <block wx:for="{{swiperList}}" wx:key="{{index}}">
         <swiper-item>

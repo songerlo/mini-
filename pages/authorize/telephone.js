@@ -12,7 +12,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function(options) {
+    if (wx.getStorageSync('token')) {
+      wx.reLaunch({
+        url: '/pages/index/index',
+      })
+    }
+  },
   getPhoneNumber(e) {
     if (e.detail.errMsg === 'getPhoneNumber:ok') {
       wx.login({
@@ -30,7 +36,7 @@ Page({
           }).then(function(ret) {
             console.log(ret)
             if (ret && ret.code === 0) {
-              wx.setStorageSync('uid', ret.data.u_id);
+              wx.setStorageSync('token', ret.data.token);
               wx.reLaunch({
                 url: '/pages/index/index'
               })

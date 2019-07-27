@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/authorize/telephone",
     "pages/index/index",
     "pages/user/user",
     "pages/order/detail",
@@ -12,7 +13,6 @@
     "pages/address/list",
     "pages/address/edit",
     "pages/recharge/recode",
-    "pages/authorize/telephone",
     "pages/recharge/index"
   ],
   "window": {
@@ -37,6 +37,10 @@
         "selectedIconPath": "/source/tabbar/user-active.png"
       }
     ]
+  },
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "van-popup": "/miniprogram_npm/vant-weapp/popup/index"
   },
   "networkTimeout": {
     "request": 10000,

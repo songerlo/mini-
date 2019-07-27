@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   padding: 50rpx;
+  margin-bottom: 24rpx;
+  border-radius: 10rpx;
 }
 
 .user-name {
@@ -29,13 +31,15 @@
 .address-desc {
   font-size: 26rpx;
   width: 90%;
+  padding-right: 40rpx;
 }
 
 .icon-edit {
   position: absolute;
-  top: 0;
+  top: -22rpx;
   right: 0;
   width: 32rpx;
   height: 42rpx;
   float: right;
+  padding:  10rpx;
 }

@@ -81,6 +81,11 @@ Page({
   goBack () {
     wx.navigateBack();
   },
+  goBackIndex () {
+    wx.reLaunch({
+      url: '/pages/index/index',
+    })
+  },
   goExDetail () {
     app.navigateTo({
       url: '/pages/order/list'

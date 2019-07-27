@@ -26,6 +26,17 @@
 .goods-item-r{
   width: 435rpx;
   display: flex;
+  height: 200rpx;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goods-item-r-b {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+}
+.goods-item-r-l {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
