@@ -1,17 +1,21 @@
 <!--components/orders-item/orders-item.wxml-->
 <view class='item'>
   <view class='title'>
-    <view class='num'>兑换编号：123345665866</view>
-    <view class='status'>已完成</view>
+    <view class='num'>兑换编号：{{params.orderSn}}</view>
+    <view class='status' wx:if="{{params.orderStatus == 0}}">待消耗</view>
+    <view class='status' wx:if="{{params.orderStatus == 1}}">待发货</view>
+    <view class='status' wx:if="{{params.orderStatus == 2}}">待收货</view>
+    <view class='status' wx:if="{{params.orderStatus == 3}}">已完成</view>
+    <view class='status' style='color:#999999' wx:if="{{params.orderStatus == 4}}">已取消</view>
   </view>
   <view class='goods'>
-    <view class='pic'><image src='/source/image/1.jpg' /></view>
-    <view class='txt'>雷神(ThundeRobot) 新911黑幽灵电竞
-版英特尔酷睿i7 15.6英寸游戏笔记本...                        
+    <view class='pic'><image src='{{params.goodsImg}}' /></view>
+    <view class='txt'>
+      <text>{{params.goodsName}}</text>                  
     </view>
   </view>
   <view class='info'>
-    <view class='txt'>共<text>2</text>件商品  消耗积分：<text>89</text></view>
-    <button class='btn'>查看详情</button>    
+    <view class='txt'>共<text>{{params.orderNum}}</text>件商品  消耗积分：<text>{{params.orderPay}}</text></view>
+    <button class='btn' bindtap="seeOrderDetail">查看详情</button>    
   </view>
 </view>

@@ -1,0 +1,33 @@
+<!--pages/sendIntegral/sendIntegral.wxml-->
+<view class="content">
+  <view class="input-wrap">
+    <view class="label">
+      <image src="/source/image/require.png" class="require"></image>
+      <text>对方手机号</text>
+    </view>
+    <view>
+      <input value="{{phone}}" type='number' bindinput='bindinput' data-type='phone' maxlength="11"></input>
+    </view>
+  </view>
+  <view class="input-wrap">
+    <view class="label">
+      <image src="/source/image/require.png" class="require"></image>
+      <text>转赠积分数量</text>
+    </view>
+    <view>
+      <input value="{{num}}" type='number' bindinput='bindinput' data-type='num' maxlength="6"></input>
+    </view>
+  </view>
+  <view class="btn">
+    <button bindtap="sendIntegral">确定转赠</button>
+  </view>
+</view>
+<phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm" phoneNum="{{u_phone}}"></phone-confirm>
+
+<view class="fixed" wx:if='{{sendSuccess}}'>
+  <view class="tip">转赠成功！可分享给好友</view>
+  <button open-type="share">
+    <image src="/source/image/weixin.png" class="weixin"></image>
+    <text class="f-1">微信好友</text>
+  </button>
+</view>

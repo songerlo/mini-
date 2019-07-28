@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 10,
 			"list": [
 				{
 					"id": 0,
@@ -84,6 +84,48 @@
 					"name": "pages/address/edit",
 					"pathName": "pages/address/edit",
 					"query": "id=844&sid=3918&goodsCount=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/logs/logs",
+					"pathName": "pages/logs/logs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/help/help",
+					"pathName": "pages/help/help",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/list",
+					"pathName": "pages/order/list",
+					"query": "type=0",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "pages/order/detail",
+					"pathName": "pages/order/detail",
+					"query": "orderSn=2019072799979997",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sendIntegral/sendIntegral",
+					"pathName": "pages/sendIntegral/sendIntegral",
+					"query": "",
 					"scene": null
 				}
 			]

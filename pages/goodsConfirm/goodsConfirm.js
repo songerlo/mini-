@@ -159,7 +159,7 @@ Page({
     }).then(res => {
       if (res.code == 0) {
         this.orderSn = res.data.orderSn //获取订单编号
-        getApp().globalData.orderSn = res.data.orderSn
+        // getApp().globalData.orderSn = res.data.orderSn
         this.setData({
           showPhoneConfirm: !0
         })
@@ -177,23 +177,40 @@ Page({
     })
   },
   hidePhoneConfirm (e) {
-    // if (e.detail.checkPhone) {
-    //   this.doPay();
-    // }
+    console.log(e)
+    if (e.detail.code) {
+      this.doPay(+e.detail.code);
+    }
     this.setData({
       showPhoneConfirm: !1
     })
   },
-  doPay () {
-    doPay(this.orderSn)
+  doPay (code) {
+    doPay({
+      order_sn: this.orderSn,
+      code: code
+    })
       .then(res => {
-        if (res.code == 0) {
-          this.navigateTo({
-            url: '/pages/tip/tip?state=1'
+        this.setData({
+          time: 60,
+          canSendCode: !0
+        })
+        if (res.code === 0) {
+          wx.showToast({
+            title: '支付成功',
+            mask: true,
+            success: res => {
+              setTimeout(() => {
+                // this.triggerEvent('hidePhoneConfirm', {})
+                wx.navigateTo({
+                  url: '/pages/tip/tip?state=1'
+                })
+              }, 600)
+            }
           })
         } else {
-          this.navigateTo({
-            url: `/pages/tip/tip?state=2&msg=${res.code.message}`
+          wx.navigateTo({
+            url: `/pages/tip/tip?state=2&msg=${res.message}`
           })
         }
       })

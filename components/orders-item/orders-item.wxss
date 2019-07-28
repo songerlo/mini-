@@ -1,13 +1,84 @@
 /* components/orders-item/orders-item.wxss */
-.item{ width: 100%; margin-bottom: 15rpx; background: #fff; border-radius: 6rpx;}
-.item .title{ display: flex;  justify-content: space-between;width: 100%; height: 80rpx; line-height: 80rpx; padding: 0 25rpx; border-bottom: 1rpx solid #E5E5E5;font-size: 26rpx;}
-.item .title .num{  color: #555;}
-.item .title .status{  color: #FE6D2E;}
-.item .goods{ display: flex;  justify-content: space-between; width: 100%; padding: 10rpx 25rpx; align-items: center;}
-.item .goods .pic{ margin-right: 15rpx;}
-.item .goods .pic image{ width: 170rpx; height: 170rpx;}
-.item .goods  .txt{ line-height: 40rpx; font-size: 26rpx; color: #353535;}
-.item .info{ display: flex; justify-content: space-between; width: 100%; height: 93rpx; line-height: 55rpx; padding:19rpx 25rpx; border-top: 1rpx solid #E5E5E5;}
-.item .info .txt{ font-size: 26rpx; color: #555;}
-.item .info .txt text{ font-weight: bold; padding: 0 5rpx;}
-.item .info .btn{ width: 140rpx; height: 55rpx; line-height: 55rpx; color: #FFB423; font-size: 26rpx; border-radius: 4rpx; border: 1rpx solid #FFB423;  background: #fff;}
+
+.item {
+  width: 100%;
+  margin-bottom: 15rpx;
+  background: #fff;
+  border-radius: 6rpx;
+}
+
+.item .title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 25rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  font-size: 26rpx;
+}
+
+.item .title .num {
+  color: #555;
+}
+
+.item .title .status {
+  color: #fe6d2e;
+}
+
+.item .goods {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 100%;
+  padding: 10rpx 25rpx;
+  align-items: center;
+}
+
+.item .goods .pic {
+  margin-right: 15rpx;
+}
+
+.item .goods .pic image {
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.item .goods  .txt {
+  flex: 1;
+  height: 170rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #353535;
+  padding: 20rpx 0;
+}
+
+.item .info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 93rpx;
+  line-height: 55rpx;
+  padding: 19rpx 25rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.item .info .txt {
+  font-size: 26rpx;
+  color: #555;
+}
+
+.item .info .txt text {
+  font-weight: bold;
+  padding: 0 5rpx;
+}
+
+.item .info .btn {
+  width: 140rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  color: #ffb423;
+  font-size: 26rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #ffb423;
+  background: #fff;
+}

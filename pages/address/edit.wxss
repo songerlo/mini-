@@ -27,10 +27,13 @@
   border-radius: 10rpx;
 }
 .delete {
-  padding-top: 60px;
+  padding-top: 50px;
   color: #FE6D2E;
   text-align: center;
   font-size: 28rpx;
+}
+.delete text {
+  padding: 5px 15px;
 }
 .add-address button text{
   padding-left:10rpx;

@@ -1,5 +1,5 @@
 <!--components/orders-item/orders-define.wxml-->
 <view class='define'>
   <image src="/source/image/order_define.png"/>
-  <view class='txt'>您还没有兑换订单</view>
+  <view class='txt'>暂无数据</view>
 </view>

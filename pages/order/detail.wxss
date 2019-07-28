@@ -1,26 +1,211 @@
 /* pages/order/detail.wxss */
-.order_detail{ width: 100%;}
-.order_detail .order_status{ display: flex; align-items: center; width: 100%; padding: 65rpx 60rpx; background: #FFB423;}
-.order_detail .order_status .pic{ width: 105rpx; height: 105rpx; margin-right: 50rpx;}
-.order_detail .order_status .txt{ color: #fff; font-size: 36rpx;}
-.order_detail .order_status .status{ width: 56rpx; height: 26rpx; color: #FE6D2E; border: 1rpx solid #FE6D2E; border-radius: 4rpx; font-size: 20rpx;}
-.order_detail .address{ display: flex; align-items: center;  width: 94%; margin:20rpx 3%; padding: 15rpx 24rpx; background: #fff; border-radius: 10rpx;}
-.order_detail .address .icon_address{ width: 30rpx; height: 37rpx;}
-.order_detail .address .icon_arrow{ width: 12rpx; height: 21rpx;}
-.order_detail .address .txt{ margin: 0 15rpx; font-size: 24rpx;}
-.order_detail .address .txt .user{ line-height: 32rpx; margin-bottom: 10rpx;}
-.order_detail .address .txt .name{ color: #333; font-size: 32rpx;}
-.order_detail .address .txt .status{ width: 56rpx; height: 26rpx; margin-left: 10rpx; padding: 3rpx 5rpx; color: #FE6D2E; border: 1rpx solid #FE6D2E; border-radius: 8rpx; font-size: 20rpx;}
-.order_detail .address .txt .tel{ color: #999; font-size: 32rpx;}
-.order_detail .address .txt{ color: #333;font-size: 26rpx; line-height:40rpx;}
-.order_detail .order_info{width: 94%; margin:15rpx 3%; padding: 20rpx 24rpx; background: #fff; border-radius: 10rpx; }
-.order_detail .order_info text{ display:block;color:  #555; font-size: 24rpx; line-height: 50rpx;}
-.order_detail .goods{  width: 94%; margin:15rpx 3%; padding: 20rpx 24rpx; background: #fff; border-radius: 10rpx;}
-.order_detail .goods .info{display: flex; align-items: center; width: 100%; }
-.order_detail .goods .info .pic{ border: 1rpx solid #E5E5E5; margin-right: 24rpx;}
-.order_detail .goods .info image{ width: 170rpx; height: 170rpx;}
-.order_detail .goods .info .title{ line-height: 30rpx; color: #555;font-size: 24rpx;}
-.order_detail .goods .info .subtitle{ width: 100%; height: 30rpx; overflow: hidden; text-overflow: ellipsis; white-space:nowrap; line-height: 30rpx; margin: 10rpx 0; color: #959595; font-size: 24rpx;}
-.order_detail .goods .info .price{ line-height: 40rpx; color: #353535; font-size: 30rpx;}
-.order_detail .goods .btn_c{ width: 100%; text-align: right; border-top: 1rpx solid #E5E5E5; margin-top: 15rpx; padding-top: 15rpx;}
-.order_detail .goods .btn_c .btn{ display: inline-block; width: 152rpx; height: 54rpx; text-align: center; line-height: 54rpx; border: 1rpx solid #FFB423; border-radius: 4rpx; color: #FFB423; font-size: 24rpx;}
+
+.order_detail {
+  width: 100%;
+}
+.order-top {
+  height: 250rpx;
+  position: relative;
+  margin-bottom: 120rpx;
+}
+.order_detail .order_status {
+  background-image: linear-gradient( #FFB423, #FED431);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 65rpx 60rpx;
+  /* background: #ffb423; */
+}
+.info .txt{
+  height: 170rpx;
+  flex: 1;
+}
+.order_detail .order_status .pic {
+  width: 105rpx;
+  height: 105rpx;
+  margin-right: 50rpx;
+}
+
+.order_detail .order_status .txt {
+  color: #fff;
+  font-size: 36rpx;
+  
+}
+
+.order_detail .order_status .status {
+  width: 56rpx;
+  height: 26rpx;
+  color: #fe6d2e;
+  border: 1rpx solid #fe6d2e;
+  border-radius: 4rpx;
+  font-size: 20rpx;
+}
+
+.order_detail .address {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  padding: 35rpx 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: -40rpx auto 0 auto;
+  z-index: 999;
+}
+.sp_fixed {
+  flex: 1;
+  padding-left: 32rpx;
+}
+.order_detail .address .icon_address {
+  width: 30rpx;
+  height: 37rpx;
+}
+
+.order_detail .address .icon_arrow {
+  width: 12rpx;
+  height: 21rpx;
+}
+
+.order_detail .address .txt {
+  margin: 0 15rpx;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.order_detail .address .txt .user {
+  line-height: 32rpx;
+  flex: 1;
+  /* margin-bottom: 10rpx; */
+}
+.pirce {
+  display: flex;
+  justify-content: space-between;
+  align-items:baseline;
+}
+.pirce-l {
+  color: #353535;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.pirce-r {
+  color: #999999;
+  font-size: 24rpx;
+}
+.order_detail .address .txt .name {
+  color: #333;
+  font-size: 32rpx;
+}
+
+.order_detail .address .txt .status {
+  width: 56rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  padding: 3rpx 5rpx;
+  color: #fe6d2e;
+  border: 1rpx solid #fe6d2e;
+  border-radius: 8rpx;
+  font-size: 20rpx;
+}
+
+.order_detail .address .txt .tel {
+  color: #999;
+  font-size: 32rpx;
+  margin-left: 39rpx;
+}
+
+.order_detail .address .txt {
+  color: #333;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+
+.order_detail .order_info {
+  width: 94%;
+  margin: 15rpx 3%;
+  padding: 20rpx 24rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.order_detail .order_info text {
+  display: block;
+  color: #555;
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+
+.order_detail .goods {
+  width: 94%;
+  margin: 15rpx 3%;
+  padding: 20rpx 24rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.order_detail .goods .info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.order_detail .goods .info .pic {
+  margin-right: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.order_detail .goods .info image {
+  width: 170rpx;
+  height: 170rpx;
+  border: 1rpx solid #e5e5e5;
+}
+
+
+.order_detail .goods .info .title {
+  line-height: 30rpx;
+  color: #555;
+  font-size: 24rpx;
+}
+
+.order_detail .goods .info .subtitle {
+  width: 100%;
+  height: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 30rpx;
+  margin: 10rpx 0;
+  color: #959595;
+  font-size: 24rpx;
+}
+
+.order_detail .goods .info .price {
+  line-height: 40rpx;
+  color: #353535;
+  font-size: 30rpx;
+}
+
+.order_detail .goods .btn_c {
+  width: 100%;
+  text-align: right;
+  border-top: 1rpx solid #e5e5e5;
+  margin-top: 15rpx;
+  padding-top: 15rpx;
+}
+
+.order_detail .goods .btn_c .btn {
+  display: inline-block;
+  width: 152rpx;
+  height: 54rpx;
+  text-align: center;
+  line-height: 54rpx;
+  border: 1rpx solid #ffb423;
+  border-radius: 4rpx;
+  color: #ffb423;
+  font-size: 24rpx;
+  background-color: transparent;
+}
+button::after{
+  border:none;
+}

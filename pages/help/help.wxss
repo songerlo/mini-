@@ -1,0 +1,27 @@
+/* pages/help/help.wxss */
+page {
+}
+.content {
+  min-height: 96vh;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 702rpx;
+  margin: 12rpx auto 0 auto;
+  padding:  0 30rpx 0 40rpx;
+}
+.title {
+  font-size: 36rpx;
+  margin-top: 48rpx;
+  color: #333333;
+}
+.p {
+  margin-top: 32rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.else {
+  margin-top: 55rpx;
+  font-size: 28rpx;
+  color: #666666;
+}

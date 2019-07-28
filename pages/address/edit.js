@@ -1,5 +1,5 @@
 // pages/address/edit.js
-import { addAddress, addressDetail, addressEdit } from '../../api/user.js'
+import { addAddress, addressDetail, addressEdit, addressDelete } from '../../api/user.js'
 import temp from '../../utils/area.js'
 Page({
 
@@ -245,6 +245,35 @@ Page({
       provinceCode: this.data.multiArray[0][this.data.multiIndex[0]].code,
       cityCode: this.data.multiArray[1][this.data.multiIndex[1]].code,
       areaCode: this.data.multiArray[2][this.data.multiIndex[2]].code
+    })
+  },
+  deleteAdress () {
+    wx.showModal({
+      title: '提示',
+      content: '是否删除收货地址',
+      showCancel: true,
+      success: (res) => {
+        if (res.confirm) {
+          addressDelete({
+            a_id: this.aid
+          })
+            .then(res => {
+              if (res.code === 0) {
+                wx.showToast({
+                  title: '删除成功',
+                  duration: 1200
+                })
+                setTimeout(() => {
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                },700)
+              }
+            })
+        }
+      },
+      fail: function(res) {},
+      complete: function(res) {},
     })
   }
 })

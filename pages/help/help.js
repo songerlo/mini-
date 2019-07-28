@@ -1,33 +1,20 @@
-// pages/order/detail.js
-import { orderDetail } from '../../api/order.js'
+// pages/help/help.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orderData: {
-    }
+
   },
 
   /**
-   * 生命周期函数--监听页面加载 2019072799979997
+   * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.options = options
-    this.loadData(options)
+
   },
-  async loadData(options) {
-    const res = await orderDetail({
-      order_sn: options.orderSn
-    })
-    if (res.code === 0) {
-      res.data.receivePhone = res.data.receivePhone.substring(0, 3) + '****' + res.data.receivePhone.substring(res.data.receivePhone.length-4, res.data.receivePhone.length)
-      this.setData({
-        orderData: res.data
-      })
-    }
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

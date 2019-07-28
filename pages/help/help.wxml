@@ -1,0 +1,15 @@
+<!--pages/help/help.wxml-->
+<view class="content">
+  <view class="title">如何成为VIP</view>
+  <view class="p">请电联座机：0371-8856188，会有工作人员与您详细确认VIP会员权益及入会资格。</view>
+  <view class="title">充值开票</view>
+  <view class="p">如积分充值需要开具发票，请联系电话客服：0371-8856188</view>
+  <view class="title">快递及配送</view>
+  <view class="p">兑换商品后工作人员会在48小时内安排发货（订制类及活动商品除外）。发货后快递信息会自动以微信消息形式提示您，请及时关注快递信息及签收礼品。</view>
+  <view class="else">
+    <view>如有其它问题可资讯</view>
+    <view>客服电话：0371-88865188</view>
+    <view>客服在线时间为工作日：08:30-18:00</view>
+  </view>
+</view>
+                        

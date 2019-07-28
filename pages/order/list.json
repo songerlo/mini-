@@ -4,5 +4,6 @@
     "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
     "orders-item":"../../components/orders-item/orders-item",
     "orders-define": "../../components/orders-item/orders-define"
-  }
+  },
+  "navigationBarTitleText": "我的兑换订单"
 }

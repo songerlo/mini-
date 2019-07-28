@@ -2,7 +2,7 @@
  * @props showPhoneConfirm 显示隐藏
  * @method hidePhoneConfirm 隐藏
  */
-import { sendCode, doPay } from '../../api/verify.js'
+import { sendCode } from '../../api/verify.js'
 Component({
   properties: {
     showPhoneConfirm: {
@@ -29,7 +29,6 @@ Component({
       this.setData({
         phoneCode: e.detail.value
       })
-      console.log(this.data)
     },
     getCode (e) {
       if (!this.data.canSendCode) {
@@ -78,34 +77,8 @@ Component({
         })
         return;
       }
-      doPay({
-        order_sn: getApp().globalData.orderSn,
-        code: this.data.phoneCode
-      })
-        .then(res => {
-          this.setData({
-            time: 60,
-            canSendCode: !0
-          })
-          if (res.code === 0){
-            wx.showToast({
-              title: '支付成功',
-              mask: true,
-              success: res =>{
-                setTimeout(()=>{
-                  this.triggerEvent('hidePhoneConfirm', {})
-                  wx.navigateTo({
-                    url: '/pages/tip/tip?state=1'
-                  })
-                },600)
-              }
-            })
-          } else {
-            wx.navigateTo({
-              url: `/pages/tip/tip?state=2&msg=${res.message}`
-            })
-          }
-        })
+      this.triggerEvent('hidePhoneConfirm', { code: this.data.phoneCode})
+      
     },
     hide(){
       this.triggerEvent('hidePhoneConfirm', {})

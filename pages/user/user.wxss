@@ -23,3 +23,6 @@
 .user .list .item .item_l{ color: #353535; font-size: 32rpx; font-weight: bold;}
 .user .list .item .item_r .icon_arrow{ width: 13rpx; height: 24rpx; margin-left: 15rpx;}
 .user .list .item .item_r .txt{ color: #F57D7D; font-size: 24rpx;}
+.kefu-wrap {position: relative}
+.kefu {width: 100%;height: 100%;position: absolute;left: 0;top: 0;background-color: transparent;border: none;}
+button::after {border: none;}

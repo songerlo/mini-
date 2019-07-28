@@ -34,3 +34,10 @@ export function addressEdit(data) {
     data
   })
 }
+// 用户删除收货地址
+export function addressDelete(data) {
+  return request({
+    url: '/IntegralAddress/delete',
+    data
+  })
+}

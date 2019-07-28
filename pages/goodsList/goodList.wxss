@@ -16,6 +16,8 @@ page{
 }
 .goodslist-top-select{
   display: flex;
+  flex: 1;
+  justify-content: center;
   align-items: center;
   padding: 10rpx;
 }

@@ -16,11 +16,16 @@ Component({
   data: {
 
   },
-
+  
   /**
    * 组件的方法列表
    */
   methods: {
-
-  }
+    seeOrderDetail () {
+      getApp().navigateTo({
+        url: `/pages/order/detail?orderSn=${this.data.params.orderSn}`
+      })
+    }
+  },
+  
 })

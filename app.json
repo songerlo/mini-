@@ -13,7 +13,9 @@
     "pages/address/list",
     "pages/address/edit",
     "pages/recharge/recode",
-    "pages/recharge/index"
+    "pages/recharge/index",
+    "pages/help/help",
+    "pages/sendIntegral/sendIntegral"
   ],
   "window": {
     "backgroundTextStyle": "light",

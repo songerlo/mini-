@@ -1,43 +1,54 @@
 <!--pages/order/detail.wxml-->
 <view class='order_detail'>
   <view class='order_status'>
-    <image class='pic' src='/source/image/icon_order_status.png'/>
-    <text class='txt'>订单已取消</text>
+    <image class='pic' src='/source/image/state_0.png' wx:if="{{orderData.orderStatus == 0}}"/>
+    <image class='pic' src='/source/image/state_1.png' wx:if="{{orderData.orderStatus == 1}}"/>
+    <image class='pic' src='/source/image/state_2.png' wx:if="{{orderData.orderStatus == 2}}"/>
+    <image class='pic' src='/source/image/state_3.png' wx:if="{{orderData.orderStatus == 3}}"/>
+    <image class='pic' src='/source/image/state_4.png' wx:if="{{orderData.orderStatus == 4}}"/>
+    <text class='txt' wx:if="{{orderData.orderStatus == 0}}">订单待付款</text>
+    <text class='txt' wx:if="{{orderData.orderStatus == 1}}">订单待发货</text>
+    <text class='txt' wx:if="{{orderData.orderStatus == 2}}">订单待收货</text>
+    <text class='txt' wx:if="{{orderData.orderStatus == 3}}">订单已完成</text>
+    <text class='txt' wx:if="{{orderData.orderStatus == 4}}">订单已取消</text>
   </view>
   <view class='address'>
-    <image class='icon_address' src='/source/image/icon_address.png'/>
     <view class='txt'>
-      <view class='user'>
-        <text class='name'>晨晨</text>
-        <text class='tel'>132****6629</text>
-        <text class='status'>默认</text>
+      <image class='icon_address' src='/source/image/icon_address.png'/>
+      <view class="sp_fixed">
+        <view class='user'>
+          <text class='name'>{{orderData.receiveName}}</text>
+          <text class='tel'>{{orderData.receivePhone}}</text>
+          <!-- <text class='status'>默认</text> -->
+        </view>
+        <view class=''>{{orderData.receiveAddr}}</view>
       </view>
-      <view class=''>河南省郑州市高新区翠竹街总部企业基地3号
-楼象聚集团四层设计部靠窗户的工位</view>
     </view>
      <image class='icon_arrow' src='/source/image/icon_arrowR.png'/>
   </view>
   <view class='goods'>
     <view class='info'>
       <view class='pic'>
-        <image  src='/source/image/1.jpg'/>
+        <image  src='{{orderData.goodsImg}}'/>
       </view>
       <view class='txt'>
-        <view class='title'>Apple Macbook Pro 13.3【带触控栏】
-Corei5 8G 256G SSD 深空灰</view>
-        <view class='subtitle'>四核八代 i5 8G 256G 13.3英寸灰</view>
-        <view class='pirce'>88积分</view>
+        <view class='title'>{{orderData.goodsName}}</view>
+        <view class='subtitle'>{{orderData.goodsFeatures}}</view>
+        <view class='pirce'>
+        <text class="pirce-l">{{orderData.goodsPrice}}积分</text>
+        <text class="pirce-r">x{{orderData.orderNum}}</text>
+        </view>
       </view>
     </view>
     <view class='btn_c'>
-      <navigator class='btn'>联系客服</navigator>
+      <button class='btn' open-type="contact">联系客服</button>
     </view>
   </view>
   <view class='order_info'>
-    <text>兑换编号：165651134654</text>
-    <text>下单时间：201905140956</text>
-    <text>兑换时间：201905140956</text>
+    <text>兑换编号：{{orderData.orderSn}}</text>
+    <text>下单时间：{{orderData.createTime}}</text>
+    <text>兑换时间：{{orderData.payTime}}</text>
     <text>配送方式：快递</text>
-    <text>消耗积分：88</text>           
+    <text>消耗积分：{{orderData.orderTatal}}</text>           
   </view>
 </view>
