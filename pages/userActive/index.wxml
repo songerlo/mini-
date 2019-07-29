@@ -1,0 +1,10 @@
+<!--pages/userActive/index.wxml-->
+<view class="content">
+    <view class="text">请输入激活码</view>
+    <view class="input">
+        <input bindinput="bindinput"></input>
+    </view>
+    <view class="btn">
+        <button bindtap="sendIntegral">确定转赠</button>
+    </view>
+</view>

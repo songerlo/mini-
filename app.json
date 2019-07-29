@@ -15,7 +15,8 @@
     "pages/recharge/recode",
     "pages/recharge/index",
     "pages/help/help",
-    "pages/sendIntegral/sendIntegral"
+    "pages/sendIntegral/sendIntegral",
+    "pages/userActive/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

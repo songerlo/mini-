@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 11,
 			"list": [
 				{
 					"id": 0,
@@ -126,6 +126,12 @@
 					"name": "pages/sendIntegral/sendIntegral",
 					"pathName": "pages/sendIntegral/sendIntegral",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/userActive",
+					"pathName": "pages/userActive/index",
 					"scene": null
 				}
 			]
