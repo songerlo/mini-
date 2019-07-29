@@ -2,7 +2,7 @@
 <view class="content">
     <view class="text">请输入激活码</view>
     <view class="input">
-        <input bindinput="bindinput"></input>
+        <input bindinput="bindinput" value="{{value}}"></input>
     </view>
     <view class="btn">
         <button bindtap="postVip">确定转赠</button>

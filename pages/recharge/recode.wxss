@@ -1,27 +1,45 @@
 /* pages/recharge/recode.wxss */
+
 .list-container {
-  width: 90%;
-  margin-left: 5%;
+    background-color: #ffffff;
+    width: 702rpx;
+    margin: auto;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin-top: 12rpx;
 }
 
-.recode-detail{
-  font-size: 34rpx;
-  font-weight: bold;
-  height: 80rpx;
-  line-height: 80rpx;
+.recode-item {
+    height: 142rpx;
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    padding: 25rpx 32rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.list-container .recode-item:last-child {
+    border: none
+}
+
+.recode-detail {
+    font-size: 34rpx;
+    font-weight: bold;
+    overflow: hidden;
+    margin-bottom: 23rpx;
 }
 
 .fl {
-  float: left;
+    float: left;
 }
 
 .fr {
-  float: right;
+    float: right;
 }
 
 .recode-bottom {
-  font-size: 24rpx;
-  color: #959595;
-  height: 30rpx;
-  line-height: 30rpx;
+    font-size: 24rpx;
+    color: #959595;
+    height: 30rpx;
+    line-height: 30rpx;
+    overflow: hidden;
 }

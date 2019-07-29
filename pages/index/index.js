@@ -58,7 +58,7 @@ Page({
                 userState: res.data
             })
             getApp().globalData.userInfo = res.data
-            this.vip_status = res.vip_status //vip 状态
+            this.vip_status = res.data.vip_status //vip 状态
             this.has_transfer = res.data.has_transfer
             if (this.has_transfer !== 0) {
                 this.setData({

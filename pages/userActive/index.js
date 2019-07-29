@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        value: ""
     },
 
     /**
@@ -32,8 +32,15 @@ Page({
 
     },
     postVip() {
-        veriryVip('sddsad').then(res => {
-            console.log(res)
+        veriryVip(this.data.value).then(res => {
+            setTimeout(function() {
+                wx.navigateBack(1);
+            }, 1000)
+        })
+    },
+    bindinput(e) {
+        this.setData({
+            value: e.detail.value
         })
     },
     /**

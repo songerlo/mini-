@@ -1,5 +1,6 @@
 // pages/user/user.js
 const app = getApp()
+const request = require('../../utils/request');
 Page({
 
     /**
@@ -7,13 +8,15 @@ Page({
      */
     data: {
         userInfo: {},
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        app.globalData.userInfo.u_avatar = wx.getStorageSync('user_avatar')
+        app.globalData.userInfo.nickName = wx.getStorageSync('nickName')
         this.setData({
                 userInfo: app.globalData.userInfo,
             })
@@ -42,10 +45,23 @@ Page({
     getUserInfo: function(e) {
         app.globalData.userInfo.u_avatar = e.detail.userInfo.avatarUrl
         app.globalData.userInfo.nickName = e.detail.userInfo.nickName
+        wx.setStorageSync('user_avatar', e.detail.userInfo.avatarUrl)
+        wx.setStorageSync('nickName', e.detail.userInfo.nickName)
         this.setData({
-                userInfo: app.globalData.userInfo
-            })
+            userInfo: app.globalData.userInfo
+        })
+        this.getUserImg()
             // upload avatarUrl
+    },
+    getUserImg() {
+        request({
+            url: '/IntegralUser/saveUser',
+            method: 'POST',
+            data: {
+                nickname: app.globalData.userInfo.nickName,
+                avatar: app.globalData.userInfo.u_avatar
+            }
+        })
     },
     tapOrder: function(e) {
         const type = e.currentTarget.dataset.type
