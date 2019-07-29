@@ -60,12 +60,17 @@ Page({
     },
     tabRecode: function() {
         app.navigateTo({
-            url: '/pages/userActive/index'
+            url: '/pages/recharge/recode'
         })
     },
     tabRecharge: function() {
         app.navigateTo({
             url: '/pages/recharge/index'
+        })
+    },
+    tabUserActive() {
+        app.navigateTo({
+            url: '/pages/userActive/index'
         })
     },
     goHelp() {

@@ -12,7 +12,7 @@
                 <view class='txt'>
                     <view wx:if="{{userInfo.u_avatar!==''}}" class='name'>{{userInfo.nickName}}</view>
                     <button wx:else class='name' bindgetuserinfo="getUserInfo" open-type="getUserInfo">点击设置昵称
-            <image class='icon_alert' src='/source/image/icon_alert.png' /></button>
+                        <image class='icon_alert' src='/source/image/icon_alert.png' /></button>
                     <view class='jifen' bindtap="tabRecode">
                         <image class='icon_jifen' src='/source/image/icon_jifen.png' /> {{userInfo.u_integral}}</view>
                 </view>
@@ -41,7 +41,7 @@
                 <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
             </view>
         </view>
-        <view class='item' bindtap='tabRecode'>
+        <view class='item' bindtap='tabUserActive'>
             <view class='item_l'>会员充值</view>
             <view class='item_r'>
                 <text class="txt">您的会员待激活</text>
