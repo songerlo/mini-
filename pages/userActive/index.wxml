@@ -5,6 +5,6 @@
         <input bindinput="bindinput"></input>
     </view>
     <view class="btn">
-        <button bindtap="sendIntegral">确定转赠</button>
+        <button bindtap="postVip">确定转赠</button>
     </view>
 </view>

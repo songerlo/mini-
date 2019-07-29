@@ -60,7 +60,7 @@ Page({
     },
     tabRecode: function() {
         app.navigateTo({
-            url: '/pages/recharge/recode'
+            url: '/pages/userActive/index'
         })
     },
     tabRecharge: function() {
