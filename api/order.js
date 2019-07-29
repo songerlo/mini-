@@ -21,4 +21,11 @@ export function transfer(data) {
   })
 }
 
+export function integralLog(data) {
+  return request({
+    url: '/IntegralUser/integralLog',
+    method: 'POST',
+    data
+  })
+}
 

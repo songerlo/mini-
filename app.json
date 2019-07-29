@@ -16,6 +16,8 @@
     "pages/recharge/index",
     "pages/help/help",
     "pages/sendIntegral/sendIntegral",
+    "pages/integral/integral",
+    "pages/integral/rule",
     "pages/userActive/index"
   ],
   "window": {

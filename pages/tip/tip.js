@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.options = options;
     if (Reflect.has(options, 'state')) {
       console.log(Reflect.get(options, 'state'))
       this.setData({
@@ -88,7 +89,7 @@ Page({
   },
   goExDetail () {
     app.navigateTo({
-      url: '/pages/order/list'
+      url: `/pages/order/detail?orderSn=${this.options.orderSn}`
     })
   }
 })

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
+    "intergral-item": "../../components/intergral-item/intergral-item"
+  },
+  "navigationBarTitleText": "积分明细",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#FFB423"
+}

@@ -1,0 +1,39 @@
+/* components/intergral-item/intergral-item.wxss */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22rpx 0 26rpx 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+.item-left {
+  width: 120rpx;
+  height: 120rpx;
+}
+.item-left image {
+  width: 120rpx;
+  height: 120rpx;
+  float: left;
+  border: 1px solid #E5E5E5;
+}
+.item-middle {
+  flex: 1;
+  padding-left: 25rpx;
+  padding-right: 20rpx;
+  min-height: 110rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.name {
+  color: #555555;
+  font-size: 24rpx;
+}
+.time {
+  color: #959595;
+  font-size: 24rpx;
+}
+.item-right {
+  color: #FFB423;
+  font-size: 30rpx;
+}

@@ -1,5 +1,5 @@
 <!--pages/order/list.wxml-->
-<van-tabs active="{{ active }}" color="#FFB423" tab-class="tab" bind:change='tabChange'>
+<van-tabs active="{{ active }}" color="#FFB423" tab-class="tab" bind:change='tabChange' custom-class='custom-class' sticky='{{true}}'>
   <van-tab title="全部">
     <view class='list' wx:if='{{allList.length>0}}'>
       <block wx:for="{{allList}}" wx:key="{{index}}">
@@ -41,5 +41,3 @@
     <orders-define wx:else></orders-define>
   </van-tab>
 </van-tabs>
-
-

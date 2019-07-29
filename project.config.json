@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 14,
 			"list": [
 				{
 					"id": 0,
@@ -132,6 +132,28 @@
 					"id": -1,
 					"name": "pages/userActive",
 					"pathName": "pages/userActive/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/integral/integral",
+					"pathName": "pages/integral/integral",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "pages/integral/rule",
+					"pathName": "pages/integral/rule",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tip/tip",
+					"pathName": "pages/tip/tip",
+					"query": "state=1&orderSn=2019072953501021",
 					"scene": null
 				}
 			]

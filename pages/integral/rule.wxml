@@ -1,0 +1,10 @@
+<!--pages/help/help.wxml-->
+<view class="content">
+  <view class="title">积分充值</view>
+  <view class="p">
+    <view>积分充值：仅VIP会员拥有充值特权，已充值积分不可兑换，仅用于兑换商品礼品及转增使用。</view>
+    <view>积分赠与：积分可以进行赠与，受赠人获得转赠积分后可正常进行商品兑换。</view>
+    <view>积分兑换：积分可用于兑换商城全线积分商品，兑换商品享有国家及产品规定的质保及售后服务。</view>
+</view>
+</view>
+                        

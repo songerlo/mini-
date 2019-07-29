@@ -208,7 +208,7 @@ Page({
                             setTimeout(() => {
                                 // this.triggerEvent('hidePhoneConfirm', {})
                                 wx.navigateTo({
-                                    url: '/pages/tip/tip?state=1'
+                                  url: `/pages/tip/tip?state=1&orderSn=${this.orderSn}`
                                 })
                             }, 600)
                         }

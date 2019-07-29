@@ -174,3 +174,6 @@
 button::after {
     border: none;
 }
+button::after {
+  border: none;
+}

@@ -1,3 +1,9 @@
 /* pages/order/list.wxss */
 page{ background: #f5f5f5;}
 .list{ width: 100%; padding: 15rpx 24rpx;}
+.custom-class {
+  padding-top: 0!important;
+}
+button::after{
+  border: none;
+}

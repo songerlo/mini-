@@ -28,7 +28,8 @@ Page({
   onShow: function () {
     this.setData({
       addressList: [],
-      page: 1
+      page: 1,
+      finished: false
     })
     this.init();
   },

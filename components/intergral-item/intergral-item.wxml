@@ -1,0 +1,11 @@
+<!--components/intergral-item/intergral-item.wxml-->
+<view class="item">
+  <view class="item-left">
+    <image src="{{params.goodsImg?params.goodsImg:'/source/image/icon-default.png'}}"></image>
+  </view>
+  <view class="item-middle">
+    <view class="name">{{params.goodsName?params.goodsName:params.logTypeStr}}</view>
+    <view class="time">{{params.logTypeStr}} {{params.logTime}}</view>
+  </view>
+  <view class="item-right">{{params.logNum}}</view>
+</view>

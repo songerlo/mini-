@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="top">
+    <view class="icon-wrap">
+      <image src="/source/image/icon-jifen.png"></image>
+      <text>{{integral}}</text>
+    </view>
+    <view class="rule">
+      <button bindtap="goRule">积分规则</button>
+    </view>
+  </view>
+  <view class="list-wrap">
+    <van-tabs active="{{ active }}" color="#FFB423" tab-class="tab" bind:change='tabChange' custom-class='custom-class' sticky='{{true}}' border="{{false}}">
+      <van-tab title="全部">
+        <view class='list'>
+          <block wx:for="{{allList}}" wx:key="{{index}}">
+            <intergral-item params="{{item}}"></intergral-item>
+          </block>
+        </view>
+        <!-- <orders-define wx:else></orders-define> -->
+      </van-tab>
+      <van-tab title="收入">
+        <view class='list' wx:if='{{incomeList.length>0}}'>
+          <block wx:for="{{incomeList}}" wx:key="{{index}}">
+            <intergral-item params="{{item}}"></intergral-item>
+          </block>
+        </view>
+        <orders-define wx:else></orders-define>
+      </van-tab>
+      <van-tab title="支出">
+        <view class='list' wx:if='{{outList.length>0}}'>
+          <block wx:for="{{outList}}" wx:key="{{index}}">
+            <intergral-item params="{{item}}"></intergral-item>
+          </block>
+        </view>
+        <orders-define wx:else></orders-define>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

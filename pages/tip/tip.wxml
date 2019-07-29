@@ -40,7 +40,7 @@
       </view>
     </view>
   </block>
-  <block wx:else>
+  <!-- <block wx:else>
     <view>请传入正确的参数{state: 1||2||3||4,msg: ''}</view>
-  </block>
+  </block> -->
 </view>

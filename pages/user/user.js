@@ -76,7 +76,7 @@ Page({
     },
     tabRecode: function() {
         app.navigateTo({
-            url: '/pages/recharge/recode'
+          url: '/pages/integral/integral'
         })
     },
     tabRecharge: function() {
