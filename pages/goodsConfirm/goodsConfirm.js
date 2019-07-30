@@ -206,11 +206,10 @@ Page({
                         mask: true,
                         success: res => {
                             setTimeout(() => {
-                                // this.triggerEvent('hidePhoneConfirm', {})
                                 wx.navigateTo({
                                   url: `/pages/tip/tip?state=1&orderSn=${this.orderSn}`
                                 })
-                            }, 600)
+                            }, 800)
                         }
                     })
                 } else {

@@ -43,3 +43,9 @@
     line-height: 30rpx;
     overflow: hidden;
 }
+.none {
+  font-size: 24rpx;
+  color: #959595;
+  text-align: center;
+  margin-top: 20rpx;
+}

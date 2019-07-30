@@ -56,7 +56,7 @@ Component({
                         wx.showToast({
                             title: '验证码发送成功'
                         })
-                        setInterval(() => {
+                        this.timer = setInterval(() => {
                             this.setData({
                                 time: this.data.time - 1
                             })
@@ -85,6 +85,15 @@ Component({
             }
             this.triggerEvent('hidePhoneConfirm', {
                 code: this.data.phoneCode
+            })
+            // 初始化
+            clearInterval(this.timer)
+            this.setData({
+              phoneCode: "",
+              ifCode: !1,
+              confirmLoading: !1,
+              time: 60,
+              canSendCode: !0
             })
         },
         hide() {

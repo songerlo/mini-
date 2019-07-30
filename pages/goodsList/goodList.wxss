@@ -49,10 +49,10 @@ page{
   border-color:#999999 transparent transparent;
   position:relative;
 }
-.triangle-up-active{
+.triangle-a .triangle-up-active{
   border-color:transparent transparent #fe6d2e;
 }
-.triangle-down-active{
+.triangle-a .triangle-down-active{
   border-color:#fe6d2e transparent transparent;
 }
 .goodslist-bottom{

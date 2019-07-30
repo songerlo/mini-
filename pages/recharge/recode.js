@@ -8,7 +8,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      recordList: [],
+      page: 1,
+      finished: !1
     },
 
     /**
@@ -47,10 +49,22 @@ Page({
     },
     getIntegral() {
         getIntegra({
-            page: 1,
+            page: this.data.page,
             pageSize: 20
         }).then(res => {
             console.log(res)
+            if (res.code === 0) {
+              if (res.data.data.length > 0) {
+                this.setData({
+                  recordList: [...this.data.recordList, ...res.data.data],
+                  page: this.data.page + 1
+                })
+              } else {
+                this.setData({
+                  finished: !0
+                })
+              }
+            }
         })
     },
     /**
@@ -64,7 +78,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function() {
-
+      this.getIntegral()
     },
 
     /**

@@ -49,3 +49,12 @@ export function getIntegra(data) {
         data
     })
 }
+
+// 首页轮播图
+export function getBanner(data) {
+  return request({
+    url: '/api/user/register',
+    data,
+    method: 'POST'
+  })
+}

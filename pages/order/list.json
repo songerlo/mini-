@@ -3,7 +3,8 @@
     "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
     "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
     "orders-item":"../../components/orders-item/orders-item",
-    "orders-define": "../../components/orders-item/orders-define"
+    "orders-define": "../../components/orders-item/orders-define",
+    "phone-confirm": "/components/phone-confirm/phone-confirm"
   },
   "navigationBarTitleText": "我的兑换订单"
 }

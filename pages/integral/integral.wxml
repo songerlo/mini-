@@ -9,7 +9,7 @@
     </view>
   </view>
   <view class="list-wrap">
-    <van-tabs active="{{ active }}" color="#FFB423" tab-class="tab" bind:change='tabChange' custom-class='custom-class' sticky='{{true}}' border="{{false}}">
+    <van-tabs active="{{ active }}" color="#FFB423" tab-class="tab" bind:change='tabChange' custom-class='custom-class' sticky='{{false}}' border="{{false}}">
       <van-tab title="全部">
         <view class='list'>
           <block wx:for="{{allList}}" wx:key="{{index}}">

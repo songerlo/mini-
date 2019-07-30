@@ -28,4 +28,19 @@ export function integralLog(data) {
     data
   })
 }
+export function doFinish(data) {
+  return request({
+    url: '/IntegralOrder/doFinish',
+    method: 'POST',
+    data
+  })
+}
 
+
+export function recharge(data) {
+  return request({
+    url: '/integraluser/recharge',
+    method: 'POST',
+    data
+  })
+}

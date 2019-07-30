@@ -55,6 +55,17 @@ Page({
       .then(res => {
         if (res.code == 0) {
           this.goodsPrice = +res.data.ig_price;
+          let arr = []
+          res.data.ig_images.forEach(e => {
+            console.log(e, e.indexOf('http'))
+            if (e.indexOf('http') === -1) {
+              e = 'http:' + e
+              console.log(e)
+            }
+            arr.push(e)
+          })
+          res.data.ig_images = arr
+          console.log(res.data)
           this.setData({
             goodsData: res.data,
             goodsPrice: this.goodsPrice
@@ -129,7 +140,11 @@ Page({
     })
   },
   previewSwiperImage (e) {
-    utils.previewSwiperImage(e.currentTarget.dataset.src, this.data.swiperList);
+    console.log(e.currentTarget.dataset.src, this.data.goodsData.ig_images)
+    wx.previewImage({
+      current: e.currentTarget.dataset.src,
+      urls: this.data.goodsData.ig_images,
+    })
   },
   backHome (e) {
     wx.switchTab({

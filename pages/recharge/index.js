@@ -1,5 +1,6 @@
 // pages/recharge/index.js
 const app = getApp();
+import { recharge } from '../../api/order.js'
 Page({
   /**
    * 页面的初始数据
@@ -96,6 +97,31 @@ Page({
       })
       return;
     }
-    console.log('instantRecharge')
+    recharge({
+      money: this.data.payAmount
+    })
+      .then(res => {
+        if (res.code === 0) {
+          wx.requestPayment({
+            timeStamp: res.data.timeStamp,
+            nonceStr: res.data.nonceStr,
+            package: res.data.package,
+            signType: 'MD5',
+            paySign: res.data.paySign,
+            success(res) {
+              getApp().navigateTo({
+                url: 'pages/tip/tip?status=3'
+              })
+            },
+            fail(res) {
+              // msg参数
+              getApp().navigateTo({
+                url: `pages/tip/tip?status=4&msg=`
+              })
+            }
+          })
+        }
+        console.log(res)
+      })
   }
 })

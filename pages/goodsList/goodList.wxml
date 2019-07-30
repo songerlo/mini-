@@ -6,16 +6,16 @@
         </view>
         <view class='goodslist-top-select {{isTap == 1?"active":""}}' bindtap='tapSelect' data-type="salesVolume">
             <text>销量</text>
-            <view class='triangle'>
-                <i class="triangle-border-up {{defaultSetting.highVolume ? 'triangle-up-active' : 'triangle-default'}}"></i>
-                <i class="triangle_border_down {{defaultSetting.highVolume ? 'triangle-default' : 'triangle-down-active'}}"></i>
+            <view class="triangle {{isTap == 1?'triangle-a':''}}">
+                <i class="triangle-border-up {{!defaultSetting.highVolume ? 'triangle-up-active' : 'triangle-default'}}"></i>
+                <i class="triangle_border_down {{!defaultSetting.highVolume?'triangle-default' : 'triangle-down-active'}}"></i>
             </view>
         </view>
         <view class='goodslist-top-select {{isTap == 2?"active":""}}' bindtap='tapSelect' data-type="integral">
             <text>积分</text>
-            <view class='triangle'>
-                <i class="triangle-border-up {{defaultSetting.highintegral ? 'triangle-up-active' : 'triangle-default'}}"></i>
-                <i class="triangle_border_down {{defaultSetting.highintegral ? 'triangle-default' : 'triangle-down-active'}}"></i>
+            <view class= "triangle {{isTap == 2?'triangle-a':''}}">
+                <i class="triangle-border-up {{!defaultSetting.highintegral? 'triangle-up-active' : 'triangle-default'}}"></i>
+                <i class="triangle_border_down {{!defaultSetting.highintegral? 'triangle-default' : 'triangle-down-active'}}"></i>
             </view>
         </view>
     </view>

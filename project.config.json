@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 15,
+			"current": 17,
 			"list": [
 				{
 					"id": 0,
@@ -160,6 +160,20 @@
 					"id": -1,
 					"name": "pages/sendIntegral/sendIntegral",
 					"pathName": "pages/sendIntegral/sendIntegral",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/recharge/recode",
+					"pathName": "pages/recharge/recode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/recharge/index",
+					"pathName": "pages/recharge/index",
 					"scene": null
 				}
 			]

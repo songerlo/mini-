@@ -2,13 +2,12 @@
 //获取应用实例
 const app = getApp();
 const utils = require("../../utils/util.js");
-// const Api = require("../../api/index.js");
 import {
     indexList,
     getTransfer
 } from '../../api/goods.js'
 import {
-    userState
+  userState, getBanner
 } from '../../api/user.js'
 import {
     veriryVip
@@ -35,6 +34,7 @@ Page({
     init() {
         this.checkUserState();
         this.loadList();
+        this.getBanner();
     },
     async loadList() {
         const res = await indexList()
@@ -80,6 +80,14 @@ Page({
             //   })
             // }
         }
+    },
+    async getBanner () {
+      const res = await getBanner({})
+      if (res.code === 0) {
+        this.setData({
+          swiperList: res.data.data
+        })
+      }
     },
     async konw() {
         const res = await getTransfer({
