@@ -1,43 +1,63 @@
 <!--pages/order/list.wxml-->
 <van-tabs active="{{ active }}" color="#FFB423" tab-class="tab" bind:change='tabChange' custom-class='custom-class' sticky='{{true}}'>
-  <van-tab title="全部">
-    <view class='list' wx:if='{{allList.length>0}}'>
-      <block wx:for="{{allList}}" wx:key="{{index}}">
-        <orders-item params="{{item}}"></orders-item>
-      </block>
-    </view>
-    <orders-define wx:else></orders-define>
-  </van-tab>
-  <van-tab title="待消耗">
-    <view class='list' wx:if='{{awaitUseList.length>0}}'>
-      <block wx:for="{{awaitUseList}}" wx:key="{{index}}">
-        <orders-item params="{{item}}"></orders-item>
-      </block>
-    </view>
-    <orders-define wx:else></orders-define>
-  </van-tab>
-  <van-tab title="待发货">
-     <view class='list' wx:if='{{awaitSendList.length>0}}'>
-      <block wx:for="{{awaitSendList}}" wx:key="{{index}}">
-        <orders-item params="{{item}}"></orders-item>
-      </block>
-    </view>
-    <orders-define wx:else></orders-define>
-  </van-tab>
-  <van-tab title="待收货">
-    <view class='list' wx:if='{{awaitReceiveList.length>0}}'>
-      <block wx:for="{{awaitReceiveList}}" wx:key="{{index}}">
-        <orders-item params="{{item}}"></orders-item>
-      </block>
-    </view>
-    <orders-define wx:else></orders-define>
-  </van-tab>
-  <van-tab title="已取消">
-    <view class='list' wx:if='{{cancleList.length>0}}'>
-      <block wx:for="{{cancleList}}" wx:key="{{index}}">
-        <orders-item params="{{item}}"></orders-item>
-      </block>
-    </view>
-    <orders-define wx:else></orders-define>
-  </van-tab>
+    <van-tab title="全部">
+        <view class='list' wx:if='{{allList.length>0}}'>
+            <block wx:for="{{allList}}" wx:key="{{index}}">
+                <orders-item params="{{item}}"></orders-item>
+            </block>
+        </view>
+        <view class="list" wx:else>
+            <orders-define></orders-define>
+        </view>
+    </van-tab>
+    <van-tab title="待消耗">
+        <view class='list' wx:if='{{awaitUseList.length>0}}'>
+            <block wx:for="{{awaitUseList}}" wx:key="{{index}}">
+                <orders-item params="{{item}}"></orders-item>
+            </block>
+        </view>
+        <view class="list" wx:else>
+            <orders-define></orders-define>
+        </view>
+    </van-tab>
+    <van-tab title="待发货">
+        <view class='list' wx:if='{{awaitSendList.length>0}}'>
+            <block wx:for="{{awaitSendList}}" wx:key="{{index}}">
+                <orders-item params="{{item}}"></orders-item>
+            </block>
+        </view>
+        <view class="list" wx:else>
+            <orders-define></orders-define>
+        </view>
+    </van-tab>
+    <van-tab title="待收货">
+        <view class='list' wx:if='{{awaitReceiveList.length>0}}'>
+            <block wx:for="{{awaitReceiveList}}" wx:key="{{index}}">
+                <orders-item params="{{item}}"></orders-item>
+            </block>
+        </view>
+        <view class="list" wx:else>
+            <orders-define></orders-define>
+        </view>
+    </van-tab>
+    <van-tab title="已完成">
+        <view class='list' wx:if='{{stocksList.length>0}}'>
+            <block wx:for="{{stocksList}}" wx:key="{{index}}">
+                <orders-item params="{{item}}"></orders-item>
+            </block>
+        </view>
+        <view class="list" wx:else>
+            <orders-define></orders-define>
+        </view>
+    </van-tab>
+    <van-tab title="已取消">
+        <view class='list' wx:if='{{cancleList.length>0}}'>
+            <block wx:for="{{cancleList}}" wx:key="{{index}}">
+                <orders-item params="{{item}}"></orders-item>
+            </block>
+        </view>
+        <view class="list" wx:else>
+            <orders-define></orders-define>
+        </view>
+    </van-tab>
 </van-tabs>
