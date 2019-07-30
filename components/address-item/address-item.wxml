@@ -1,14 +1,15 @@
 <!--components/address-item/address-item.wxml-->
 <view class='address-item-container'>
-  <view class='user-info' bindtap="tapAddress">
-    <text class='user-name' >{{addressItem.name}}</text>
-    <text class='user-telephone'>{{addressItem.phone}}</text>
-    <van-tag color="#FE6D2E" round plain wx:if="{{addressItem.is_default}}">默认</van-tag>
-  </view>
-  <view class='address-info'>
-    <view class='address-desc' bindtap="tapAddress">
-      {{addressItem.province_name}}{{addressItem.city_name}}{{addressItem.area_name}}{{addressItem.address}}
+    <view class='user-info' bindtap="tapAddress">
+        <text class='user-name'>{{addressItem.name}}</text>
+        <text class='user-telephone'>{{addressItem.phone}}</text>
+        <van-tag color="#FE6D2E" round plain wx:if="{{addressItem.is_default}}">默认</van-tag>
     </view>
-    <image src='/source/image/icon-edit.png' class='icon-edit' bindtap="tapEdit" data-aid='{{addressItem.a_id}}'></image>
-  </view>
+    <view class='address-info'>
+        <view class='address-desc' bindtap="tapAddress">
+            {{addressItem.full_address}}
+        </view>
+        <image src='/source/image/icon-edit.png' class='icon-edit' bindtap="tapEdit" data-aid='{{addressItem.a_id}}'>
+        </image>
+    </view>
 </view>

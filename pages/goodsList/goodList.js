@@ -32,7 +32,11 @@ Page({
             defaultSetting = this.data.defaultSetting;
         moduleList({
                 igm_id: this.igm_id,
-                sort: isTap == 0 ? 0 : isTap == 1 && defaultSetting.highVolume ? 1 : isTap == 1 && !defaultSetting.highVolume ? 2 : isTap == 2 && !defaultSetting.highintegral ? 3 : 4,
+                sort: isTap == 0 ?
+                    0 : isTap == 1 && defaultSetting.highVolume ?
+                    1 : isTap == 1 && !defaultSetting.highVolume ?
+                    2 : isTap == 2 && !defaultSetting.highintegral ?
+                    3 : 4,
                 page: this.page,
                 pageSize: 20
             })

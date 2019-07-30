@@ -14,7 +14,7 @@
                     <text>{{defaultAddress.phone}}</text>
                     <text class='default' wx:if="{{defaultAddress.is_default}}">默认</text>
                 </view>
-                <view class='address'>{{defaultAddress.address}}</view>
+                <view class='address'>{{defaultAddress.full_address}}</view>
             </block>
         </view>
         <view class='goodsconfirm-address-right' bindtap='goAddressList'>

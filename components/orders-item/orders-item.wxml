@@ -1,21 +1,26 @@
 <!--components/orders-item/orders-item.wxml-->
 <view class='item'>
-  <view class='title'>
-    <view class='num'>兑换编号：{{params.orderSn}}</view>
-    <view class='status' wx:if="{{params.orderStatus == 0}}">待消耗</view>
-    <view class='status' wx:if="{{params.orderStatus == 1}}">待发货</view>
-    <view class='status' wx:if="{{params.orderStatus == 2}}">待收货</view>
-    <view class='status' wx:if="{{params.orderStatus == 3}}">已完成</view>
-    <view class='status' style='color:#999999' wx:if="{{params.orderStatus == 4}}">已取消</view>
-  </view>
-  <view class='goods'>
-    <view class='pic'><image src='{{params.goodsImg}}' /></view>
-    <view class='txt'>
-      <text>{{params.goodsName}}</text>                  
+    <view class='title'>
+        <view class='num'>兑换编号：{{params.orderSn}}</view>
+        <view class='status' wx:if="{{params.orderStatus == 0}}">待消耗</view>
+        <view class='status' wx:if="{{params.orderStatus == 1}}">待发货</view>
+        <view class='status' wx:if="{{params.orderStatus == 2}}">待收货</view>
+        <view class='status' wx:if="{{params.orderStatus == 3}}">已完成</view>
+        <view class='status' style='color:#999999' wx:if="{{params.orderStatus == 4}}">已取消</view>
     </view>
-  </view>
-  <view class='info'>
-    <view class='txt'>共<text>{{params.orderNum}}</text>件商品  消耗积分：<text>{{params.orderPay}}</text></view>
-    <button class='btn' bindtap="seeOrderDetail">查看详情</button>    
-  </view>
+    <view class='goods' bindtap="seeOrderDetail">
+        <view class='pic'>
+            <image src='{{params.goodsImg}}' />
+        </view>
+        <view class='txt'>
+            <text>{{params.goodsName}}</text>
+        </view>
+    </view>
+    <view class='info'>
+        <view class='txt'>共<text>{{params.orderNum}}</text>件商品 消耗积分：<text>{{params.orderPay}}</text></view>
+        <!-- <button class='btn' bindtap="seeOrderDetail">查看详情</button> -->
+        <button class='btn' bindtap="seeOrderDetail" wx:if="{{params.orderStatus == 0 || params.orderStatus == 1 }}">取消订单</button>
+        <button class='btn' bindtap="seeOrderDetail" wx:if="{{params.orderStatus == 0 }}">立即兑换</button>
+        <button class='btn' bindtap="seeOrderDetail" wx:if="{{params.orderStatus == 2 }}">确认收货</button>
+    </view>
 </view>
