@@ -12,10 +12,14 @@ Component({
     phoneNum: {
       type: String,
       value: ''
+    },
+    isJump: {
+      type: Boolean,
+      value: !1
     }
   },
   options: {
-    addGlobalClass: true,
+    addGlobalClass: true
   },
   data: {
     phoneCode: "",
@@ -78,10 +82,14 @@ Component({
         return;
       }
       this.triggerEvent('hidePhoneConfirm', { code: this.data.phoneCode})
-      
     },
     hide(){
       this.triggerEvent('hidePhoneConfirm', {})
+      if(this.properties.isJump){
+        wx.navigateTo({
+          url: "../../pages/order/list",
+        })
+      }
     }
   },
   created() {

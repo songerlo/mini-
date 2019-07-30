@@ -1,72 +1,72 @@
 <!--pages/goodsConfirm/goodsConfirm.wxml-->
 <view class='goodsconfirm-container'>
-  <view class='goodsconfirm-address'>
-    <view class='goodsconfirm-address-left'>
-      <image src='/source/image/icon-address.png'></image>
-    </view>
-    <view class='goodsconfirm-address-middle'>
-      <block wx:if="{{!defaultAddress.name}}">
-        <view class='creatAddress'>创建收货地址</view>
-      </block>
-      <block wx:else>
-        <view class='address-name'>
-          <text>{{defaultAddress.name}}</text>
-          <text>{{defaultAddress.phone}}</text>
-          <text class='default' wx:if="{{defaultAddress.is_default}}">默认</text>
+    <view class='goodsconfirm-address'>
+        <view class='goodsconfirm-address-left'>
+            <image src='/source/image/icon-address.png'></image>
         </view>
-        <view class='address'>{{defaultAddress.address}}</view>
-      </block>
-    </view>
-    <view class='goodsconfirm-address-right' bindtap='goAddressList'>
-      <van-icon name="arrow" size="14px" color="#999999"></van-icon>
-    </view>
-  </view>
-  <view class='goodsconfirm-details'>
-    <view class='goods-infor-warp'>
-      <view class='goods-infor-warp-left'>
-        <image src='{{goodsData.ig_images}}' class="goodsImg"></image>
-      </view>
-      <view class='goods-info-font'>
-        <view class='goods-info-top'>
-          <view class='goods-info-name'>{{goodsData.ig_name}}</view>
-          <view class='goods-info-type'>{{goodsData.ig_description}}</view>
+        <view class='goodsconfirm-address-middle'>
+            <block wx:if="{{!defaultAddress.name}}">
+                <view class='creatAddress'>创建收货地址</view>
+            </block>
+            <block wx:else>
+                <view class='address-name'>
+                    <text>{{defaultAddress.name}}</text>
+                    <text>{{defaultAddress.phone}}</text>
+                    <text class='default' wx:if="{{defaultAddress.is_default}}">默认</text>
+                </view>
+                <view class='address'>{{defaultAddress.address}}</view>
+            </block>
         </view>
-        <view class='goods-info-bottom'>
-          <view class='goods-info-flex'>
-            <view class='goods-integral'>
-              <text>{{goodsData.ig_price}}</text>
-              <text>积分</text>
+        <view class='goodsconfirm-address-right' bindtap='goAddressList'>
+            <van-icon name="arrow" size="14px" color="#999999"></van-icon>
+        </view>
+    </view>
+    <view class='goodsconfirm-details'>
+        <view class='goods-infor-warp'>
+            <view class='goods-infor-warp-left'>
+                <image src='{{goodsData.ig_images}}' class="goodsImg"></image>
             </view>
-            <text class='goods-count'>x {{goodsData.num}}</text>
-          </view>
+            <view class='goods-info-font'>
+                <view class='goods-info-top'>
+                    <view class='goods-info-name'>{{goodsData.ig_name}}</view>
+                    <view class='goods-info-type'>{{goodsData.ig_description}}</view>
+                </view>
+                <view class='goods-info-bottom'>
+                    <view class='goods-info-flex'>
+                        <view class='goods-integral'>
+                            <text>{{goodsData.ig_price}}</text>
+                            <text>积分</text>
+                        </view>
+                        <text class='goods-count'>x {{goodsData.num}}</text>
+                    </view>
+                </view>
+            </view>
         </view>
-      </view>
+        <view class='goods-cell'>
+            <view class='goods-cell-left'>运费</view>
+            <view class='goods-cell-right'>包邮</view>
+        </view>
+        <view class='goods-cell'>
+            <view class='goods-cell-left'>配送说明</view>
+            <view class='goods-cell-right'>2-7工作日发货</view>
+        </view>
+        <view class='goods-cell'>
+            <view class='goods-cell-left'>留言备注</view>
+            <view class='goods-cell-right'>
+                <input type='text' placeholder='点击输入留言' value='{{customerMessage}}' bindinput="inputMessage" placeholder-class='placeholder'></input>
+            </view>
+        </view>
     </view>
-    <view class='goods-cell'>
-      <view class='goods-cell-left'>运费</view>
-      <view class='goods-cell-right'>包邮</view>
+    <view class='goodsconfirm-bttom'>
+        <view class='goodsconfirm-bttom-left'>
+            <text>总计：</text>
+            <text>{{goodsData.total}}</text>
+            <text>积分</text>
+        </view>
+        <!-- <view class='goodsconfirm-bttom-right {{userScore >= goodsPrice ? "active-btn": "default-btn"}}'> -->
+        <view class='goodsconfirm-bttom-right active-btn'>
+            <van-button bind:click="exchange">立即兑换</van-button>
+        </view>
     </view>
-    <view class='goods-cell'>
-      <view class='goods-cell-left'>配送说明</view>
-      <view class='goods-cell-right'>2-7工作日发货</view>
-    </view>
-    <view class='goods-cell'>
-      <view class='goods-cell-left'>留言备注</view>
-      <view class='goods-cell-right'>
-        <input type='text' placeholder='点击输入留言' value='{{customerMessage}}' bindinput="inputMessage" placeholder-class='placeholder'></input>
-      </view>
-    </view>
-  </view>
-  <view class='goodsconfirm-bttom'>
-    <view class='goodsconfirm-bttom-left'>
-      <text>总计：</text>
-      <text>{{goodsData.total}}</text>
-      <text>积分</text>
-    </view>
-    <!-- <view class='goodsconfirm-bttom-right {{userScore >= goodsPrice ? "active-btn": "default-btn"}}'> -->
-    <view class='goodsconfirm-bttom-right active-btn'>
-      <van-button bind:click="exchange">立即兑换</van-button>
-    </view>
-  </view>
 </view>
-<phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm" phoneNum="{{userInfo.u_cellphone}}"></phone-confirm>
+<phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm" phoneNum="{{userInfo.u_cellphone}}" isJump='{{ true }}'></phone-confirm>
