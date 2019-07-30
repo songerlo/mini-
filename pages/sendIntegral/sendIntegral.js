@@ -1,5 +1,6 @@
 // pages/sendIntegral/sendIntegral.js
 import { transfer } from '../../api/order.js'
+import { miniCode } from '../../api/verify.js'
 Page({
 
   /**
@@ -10,7 +11,10 @@ Page({
     num: null,
     sendSuccess: !1,
     showPhoneConfirm: !1,
-    u_phone: null
+    u_phone: null,
+    canSendCode: !0,
+    time: 60,
+    code: null
   },
 
   /**
@@ -27,6 +31,40 @@ Page({
    */
   onReady: function () {
 
+  },
+  getCode(e) {
+    if (!this.data.canSendCode) {
+      return
+    }
+    miniCode()
+      .then(res => {
+        if (res.code == 0) {
+          this.setData({
+            canSendCode: !1,
+            ifCode: !0
+          })
+          wx.showToast({
+            title: '验证码发送成功'
+          })
+          setInterval(() => {
+            this.setData({
+              time: this.data.time - 1
+            })
+            if (this.data.time == 0) {
+              this.setData({
+                canSendCode: !0,
+                time: 60
+              })
+            }
+          }, 1000)
+        } else {
+          wx.showToast({
+            title: res.message,
+            icon: 'none'
+          })
+        }
+        console.log(res)
+      })
   },
 
   /**
@@ -67,23 +105,41 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (ops) {
+    if(ops.from === 'button'){
+      console.log(ops.target)
+    }
+    return {
+      title: '积分商城',
+      path: '/pages/authorize/telephone',
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:" + JSON.stringify(res));
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
   },
   bindinput (e) {
-    console.log(e)
     if (e.currentTarget.dataset.type === 'num') {
       this.setData({
         num: e.detail.value
       })
-    } else {
+    } else if(e.currentTarget.dataset.type ==='code'){
+      this.setData({
+        code: e.detail.value
+      })
+    }
+    else {
       this.setData({
         phone: e.detail.value
       })
     }
   },
   sendIntegral () {
-    if (this.data.phone == null || this.data.num == null) {
+    if (this.data.phone == null || this.data.num == null || this.data.code == null) {
       wx.showToast({
         title: '请先填写完整',
         icon: 'none',
@@ -95,11 +151,13 @@ Page({
     this.setData({
       showPhoneConfirm: !0
     })
+    this.transfer()
   },
   transfer () {
     transfer({
       integral: this.data.num,
-      to_phone: this.data.phone
+      to_phone: this.data.phone,
+      code: this.data.code
     })
       .then(res => {
         if (res.code === 0) {
@@ -110,7 +168,12 @@ Page({
             mask: true
           })
           this.setData({
-            sendSuccess: !0
+            sendSuccess: !0,
+            code: null,
+            phone: null,
+            num: null,
+            canSendCode: !0,
+            time: 60
           })
         }
       })

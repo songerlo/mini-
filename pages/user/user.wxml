@@ -34,14 +34,14 @@
         </view>
     </view>
     <view class='list'>
-        <view class='item' bindtap='tabRecharge'>
+        <view class='item' bindtap='tabRecharge' wx:if="{{ userInfo.u_type == 1 }}">
             <view class='item_l'>积分充值</view>
             <view class='item_r'>
                 <text class="txt">会员充值，享5倍积分</text>
                 <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
             </view>
         </view>
-        <view class='item' bindtap='tabUserActive'>
+        <view class='item' bindtap='tabUserActive' wx:if="{{ userInfo.u_type==0 }}">
             <view class='item_l'>会员充值</view>
             <view class='item_r'>
                 <text class="txt">您的会员待激活</text>

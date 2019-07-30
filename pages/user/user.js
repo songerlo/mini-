@@ -1,6 +1,9 @@
 // pages/user/user.js
 const app = getApp()
 const request = require('../../utils/request');
+// import {
+//     userState
+// } from '../../api/user.js'
 Page({
 
     /**
@@ -76,7 +79,7 @@ Page({
     },
     tabRecode: function() {
         app.navigateTo({
-          url: '/pages/integral/integral'
+            url: '/pages/integral/integral'
         })
     },
     tabRecharge: function() {

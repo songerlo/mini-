@@ -76,3 +76,30 @@ button::after{
 .f-1 {
   font-size: 24rpx;
 }
+.phone-confirm-input{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.phone-confirm-input input{
+  width: 454rpx;
+  height: 70rpx;
+  /* border: 1rpx solid #B3B3B3; */
+  border-radius: 10rpx 0 0 10rpx;
+  font-size: 26rpx;
+  padding-left: 24rpx;
+  float: left;
+  margin: 0;
+  border-right: none;
+  }
+.phone-confirm-input button{
+  width: 222rpx;
+  height: 70rpx;
+  background-image: linear-gradient( #FED431, #FFB423);
+  font-size: 26rpx;
+  color: #ffffff;
+  line-height: 70rpx;
+  float: right;
+  border-radius: 0 5rpx 5rpx 0;
+}

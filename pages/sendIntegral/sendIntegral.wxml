@@ -18,11 +18,23 @@
       <input value="{{num}}" type='number' bindinput='bindinput' data-type='num' maxlength="6"></input>
     </view>
   </view>
+  <view class="input-wrap">
+    <view class="label">
+      <image src="/source/image/require.png" class="require"></image>
+      <text>验证码</text>
+    </view>
+    <view>
+      <view class='phone-confirm-input'>
+      <input placeholder='验证码' type='number' value='{{code}}' bindinput="bindinput" maxlength="11"  data-type='code'></input>
+      <button bindtap='getCode'>{{canSendCode ? '获取验证码' : time}}</button>
+    </view>
+    </view>
+  </view>
   <view class="btn">
     <button bindtap="sendIntegral">确定转赠</button>
   </view>
 </view>
-<phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm" phoneNum="{{u_phone}}"></phone-confirm>
+<!-- <phone-confirm showPhoneConfirm="{{showPhoneConfirm}}" bindhidePhoneConfirm="hidePhoneConfirm" phoneNum="{{u_phone}}"></phone-confirm> -->
 
 <view class="fixed" wx:if='{{sendSuccess}}'>
   <view class="tip">转赠成功！可分享给好友</view>
