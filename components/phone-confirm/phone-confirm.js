@@ -72,7 +72,7 @@ Component({
                             icon: 'none'
                         })
                     }
-                    console.log(res)
+
                 })
         },
         codeConfirm(e) {
@@ -84,16 +84,16 @@ Component({
                 return;
             }
             this.triggerEvent('hidePhoneConfirm', {
-                code: this.data.phoneCode
-            })
-            // 初始化
+                    code: this.data.phoneCode
+                })
+                // 初始化
             clearInterval(this.timer)
             this.setData({
-              phoneCode: "",
-              ifCode: !1,
-              confirmLoading: !1,
-              time: 60,
-              canSendCode: !0
+                phoneCode: "",
+                ifCode: !1,
+                confirmLoading: !1,
+                time: 60,
+                canSendCode: !0
             })
         },
         hide() {

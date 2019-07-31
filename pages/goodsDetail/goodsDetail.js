@@ -92,9 +92,9 @@ Page({
         userState()
             .then(res => {
                 if (res.code == 0) {
-                    this.userScore = +res.data.u_integral
+                    // this.userScore = +res.data.u_integral
                     this.setData({
-                        userScore: this.userScore
+                        userScore: res.data.u_integral
                     })
                 }
             })
@@ -165,11 +165,28 @@ Page({
         })
     },
     tapBuy() {
-        app.navigateTo({
-            url: `/pages/goodsConfirm/goodsConfirm?id=${this.options.id}&sid=${this.options.sid}&goodsCount=${this.data.goodsCount}`
+        chkStock({
+            ig_id: this.options.id,
+            ig_sku_id: this.options.sid,
+            num: this.data.goodsCount
+        }).then(res => {
+            if (res.code !== 0) {
+                wx.showToast({
+                    title: res.message,
+                    icon: 'none'
+                })
+                return
+            }
+            app.navigateTo({
+                url: `/pages/goodsConfirm/goodsConfirm?id=${this.options.id}&sid=${this.options.sid}&goodsCount=${this.data.goodsCount}`
+            })
         })
+
     },
     goodsCountChange(e) {
+        this.setData({
+            goodsCount: e.detail
+        })
         chkStock({
                 ig_id: this.options.id,
                 ig_sku_id: this.options.sid,

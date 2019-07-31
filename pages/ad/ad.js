@@ -17,9 +17,7 @@ Page({
         })
     },
 
-    bindload: function() {
-        console.log(1)
-    },
+    bindload: function() {},
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
