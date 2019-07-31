@@ -54,9 +54,10 @@ Page({
             .then(res => {
                 app.globalData.userInfo = res.data
                 this.setData({
-                    'userInfo.u_integral': res.data.u_integral,
-                    'userInfo.u_wxavatar': res.data.u_wxavatar,
-                    'userInfo.u_wxnickname': res.data.u_wxnickname,
+                    // 'userInfo.u_integral': res.data.u_integral,
+                    // 'userInfo.u_wxavatar': res.data.u_wxavatar,
+                    // 'userInfo.u_wxnickname': res.data.u_wxnickname,
+                    userInfo: res.data
                 })
             })
     },
@@ -70,14 +71,14 @@ Page({
         })
         this.getUserImg()
         userState()
-        .then(res => {
-          app.globalData.userInfo = res.data
-          this.setData({
-            'userInfo.u_integral': res.data.u_integral,
-            'userInfo.u_wxavatar': res.data.u_wxavatar,
-            'userInfo.u_wxnickname': res.data.u_wxnickname,
-          })
-        })
+            .then(res => {
+                app.globalData.userInfo = res.data
+                this.setData({
+                    'userInfo.u_integral': res.data.u_integral,
+                    'userInfo.u_wxavatar': res.data.u_wxavatar,
+                    'userInfo.u_wxnickname': res.data.u_wxnickname,
+                })
+            })
             // upload avatarUrl
     },
     getUserImg() {
