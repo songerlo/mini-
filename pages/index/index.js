@@ -19,8 +19,8 @@ Page({
         swiperSetting: { //顶部轮播图设置
             showDots: !0, //指示点
             autoplay: !0, //自动播放
-            interval: 5000, //自动播放时间间隔
-            duration: 1000, //自动播放时间
+            interval: 3000, //自动播放时间间隔
+            duration: 300, //自动播放时间
             indicatorColor: 'rgba(255, 255, 255, .7)', //指示点默认颜色
             indicatorActiveColor: '#ffffff' //指示点选中颜色
         },
