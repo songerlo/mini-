@@ -3,7 +3,7 @@ import {
     orderList
 } from '../../api/order.js'
 import {
-  doPay
+    doPay
 } from '../../api/goods.js'
 Page({
 
@@ -32,16 +32,16 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-      this.setData({
-        userInfo: getApp().globalData.userInfo
-      })
+        this.setData({
+            userInfo: getApp().globalData.userInfo
+        })
         this.setData({
             active: +options.type
         })
     },
-    onShow () {
-      this.initAll()
-      this.loadOrdersList()
+    onShow() {
+        this.initAll()
+        this.loadOrdersList()
     },
     loadOrdersList: function() {
         orderList({
@@ -103,40 +103,42 @@ Page({
                 }
             })
     },
-    update (obj) {
-      let arr = []
-      if (this.data.active === 0) {
-        arr = this.data.allList
-        arr.forEach(e => {
-          if (e.orderId === obj.detail.orderId) {
-            e.orderStatus = obj.detail.orderStatus
-          }
-        })
-        this.setData({
-          allList: arr
-        })
-      } else if (this.data.active === 1) {
-        arr = this.data.awaitUseList
-        arr.forEach(e => {
-          if (e.orderId === obj.detail.orderId) {
-            e.orderStatus = obj.detail.orderStatus
-            console.log(e)
-          }
-        })
-        this.setData({
-          awaitUseList: arr
-        })
-      } else if (this.data.active === 2) {
-        arr = this.data.awaitSendList
-        arr.forEach(e => {
-          if (e.orderId === obj.detail.orderId) {
-            e.orderStatus = obj.detail.orderStatus
-          }
-        })
-        this.setData({
-          awaitSendList: arr
-        })
-      }
+    update(obj) {
+        let arr = []
+        this.initAll()
+        this.loadOrdersList()
+        if (this.data.active === 0) {
+            arr = this.data.allList
+            arr.forEach(e => {
+                if (e.orderId === obj.detail.orderId) {
+                    e.orderStatus = obj.detail.orderStatus
+                }
+            })
+            this.setData({
+                allList: arr
+            })
+        } else if (this.data.active === 1) {
+            arr = this.data.awaitUseList
+            arr.forEach(e => {
+                if (e.orderId === obj.detail.orderId) {
+                    e.orderStatus = obj.detail.orderStatus
+                    console.log(e)
+                }
+            })
+            this.setData({
+                awaitUseList: arr
+            })
+        } else if (this.data.active === 2) {
+            arr = this.data.awaitSendList
+            arr.forEach(e => {
+                if (e.orderId === obj.detail.orderId) {
+                    e.orderStatus = obj.detail.orderStatus
+                }
+            })
+            this.setData({
+                awaitSendList: arr
+            })
+        }
     },
     /**
      * 页面相关事件处理函数--监听用户下拉动作
@@ -144,49 +146,49 @@ Page({
     onPullDownRefresh: function() {
 
     },
-    exchange (e) {
-      this.orderSn = e.detail.orderSn
-      this.setData({
-        showPhoneConfirm: true
-      })
-    },
-    hidePhoneConfirm (e) {
-      if (e.detail.code) {
-        this.doPay(+e.detail.code);
-      }
-      this.setData({
-        showPhoneConfirm: false
-      })
-    },
-  doPay(code) {
-    doPay({
-      order_sn: this.orderSn,
-      code: code
-    })
-      .then(res => {
+    exchange(e) {
+        this.orderSn = e.detail.orderSn
         this.setData({
-          time: 60,
-          canSendCode: !0
+            showPhoneConfirm: true
         })
-        if (res.code === 0) {
-          wx.showToast({
-            title: '支付成功',
-            mask: true,
-            success: res => {
-              setTimeout(() => {
-                wx.navigateTo({
-                  url: `/pages/tip/tip?state=1&orderSn=${this.orderSn}`
-                })
-              }, 800)
-            }
-          })
-        } else {
-          wx.navigateTo({
-            url: `/pages/tip/tip?state=2&msg=${res.message}`
-          })
+    },
+    hidePhoneConfirm(e) {
+        if (e.detail.code) {
+            this.doPay(+e.detail.code);
         }
-      })
-  },
+        this.setData({
+            showPhoneConfirm: false
+        })
+    },
+    doPay(code) {
+        doPay({
+                order_sn: this.orderSn,
+                code: code
+            })
+            .then(res => {
+                this.setData({
+                    time: 60,
+                    canSendCode: !0
+                })
+                if (res.code === 0) {
+                    wx.showToast({
+                        title: '支付成功',
+                        mask: true,
+                        success: res => {
+                            setTimeout(() => {
+                                wx.navigateTo({
+                                    url: `/pages/tip/tip?state=1&orderSn=${this.orderSn}`
+                                })
+                            }, 800)
+                        }
+                    })
+                } else {
+                    wx.navigateTo({
+                        url: `/pages/tip/tip?state=2&msg=${res.message}`
+                    })
+                }
+            })
+    },
     /**
      * 页面上拉触底事件的处理函数
      */
@@ -195,25 +197,25 @@ Page({
     },
     tabChange(e) {
         this.setData({
-         active: e.detail.index,
+            active: e.detail.index,
         })
         this.initAll()
         this.loadOrdersList();
     },
-    initAll () {
-      this.setData({
-        allList: [],
-        allListPage: 1,
-        awaitUseList: [],
-        awaitUsePage: 1,
-        awaitSendList: [],
-        awaitSendPage: 1,
-        awaitReceiveList: [],
-        awaitReceivePage: 1,
-        cancleList: [],
-        canclePage: 1,
-        stocksList: [],
-        stocksPage: 1
-      })
+    initAll() {
+        this.setData({
+            allList: [],
+            allListPage: 1,
+            awaitUseList: [],
+            awaitUsePage: 1,
+            awaitSendList: [],
+            awaitSendPage: 1,
+            awaitReceiveList: [],
+            awaitReceivePage: 1,
+            cancleList: [],
+            canclePage: 1,
+            stocksList: [],
+            stocksPage: 1
+        })
     }
 })

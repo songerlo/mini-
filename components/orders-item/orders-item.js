@@ -1,6 +1,8 @@
 // components/orders-item/orders-item.js
 const request = require('../../utils/request');
-import { doFinish } from '../../api/order.js'
+import {
+    doFinish
+} from '../../api/order.js'
 Component({
     /**
      * 组件的属性列表
@@ -37,17 +39,16 @@ Component({
                 }
             }).then(res => {
                 if (res.code === 0) {
-                  this.triggerEvent('update', {
-                    
-                    orderStatus: 4
-                  })
+                    this.triggerEvent('update', {
+                        orderStatus: 4
+                    })
                 }
             })
         },
         exchange() {
-          this.triggerEvent('exchange', {
-            orderSn: this.data.params.orderSn
-          })
+            this.triggerEvent('exchange', {
+                orderSn: this.data.params.orderSn
+            })
         },
         confirm() {
 
