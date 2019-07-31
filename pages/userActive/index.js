@@ -33,9 +33,17 @@ Page({
     },
     postVip() {
         veriryVip(this.data.value).then(res => {
+            if (res.code !== 0) {
+                wx.showToast({
+                    icon: 'none',
+                    title: res.message,
+                    duration: 3000
+                })
+                return
+            }
             setTimeout(function() {
                 wx.navigateBack(1);
-            }, 1000)
+            }, 2000)
         })
     },
     bindinput(e) {

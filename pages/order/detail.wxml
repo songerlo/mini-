@@ -24,7 +24,7 @@
                 <view class=''>{{orderData.receiveAddr}}</view>
             </view>
         </view>
-        <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
+        <!-- <image class='icon_arrow' src='/source/image/icon_arrowR.png' /> -->
     </view>
     <view class='goods'>
         <view class='info'>
@@ -46,9 +46,9 @@
     </view>
     <view class='order_info'>
         <text>兑换编号：{{orderData.orderSn}}</text>
-        <text>下单时间：{{orderData.createTime}}</text>
         <text>兑换时间：{{orderData.payTime}}</text>
+        <text>下单时间：{{orderData.createTime}}</text>
         <text>配送方式：快递</text>
-        <text>消耗积分：{{orderData.orderTatal}}</text>
+        <text>消耗积分：{{orderData.orderTotal}}</text>
     </view>
 </view>

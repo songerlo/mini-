@@ -1,18 +1,18 @@
 <!--pages/recharge/recode.wxml-->
 <view class='list-container' wx:if="{{recordList.length>0}}">
-  <block wx:for="{{recordList}}" wx:key="{{index}}">
-    <view class='recode-item'>
-      <view class='recode-detail'>
-        <text class='fl'>250 积分充值</text>
-        <text class='fr'>￥100</text>
-      </view>
-      <view class='recode-bottom'>
-        <text class='fl'>剩余积分 1250</text>
-        <text class='fr'>2019-04-10</text>
-      </view>
-    </view>
-  </block>
+    <block wx:for="{{recordList}}" wx:key="{{index}}">
+        <view class='recode-item'>
+            <view class='recode-detail'>
+                <text class='fl'>{{item.ir_integral}} 积分充值</text>
+                <text class='fr'>￥{{item.ir_pay}}</text>
+            </view>
+            <view class='recode-bottom'>
+                <text class='fl'>剩余积分 {{item.ir_balance}}</text>
+                <text class='fr'>{{item.ir_payTime}}</text>
+            </view>
+        </view>
+    </block>
 </view>
 <view class="none" wx:if='{{finished}}'>
-加载完毕，暂无更多
+    加载完毕，暂无更多
 </view>

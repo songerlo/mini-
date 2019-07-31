@@ -123,6 +123,13 @@ Page({
             url: `/pages/goodsList/goodList?id=${e.currentTarget.dataset.id}`
         })
     },
+    hideAlert() {
+        // console.log(1)
+        this.setData({
+            showAlertVip: !1,
+            showMask: false
+        })
+    },
     verifyVip() {
         veriryVip(this.data.vipCode)
             .then(res => {

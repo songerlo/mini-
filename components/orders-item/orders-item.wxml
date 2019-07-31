@@ -17,7 +17,7 @@
         </view>
     </view>
     <view class='info'>
-        <view class='txt'>共<text>{{params.orderNum}}</text>件商品 消耗积分：<text>{{params.orderPay}}</text></view>
+        <view class='txt'>共<text>{{params.orderNum}}</text>件商品 消耗积分：<text>{{params.orderTotal}}</text></view>
         <!-- <button class='btn' bindtap="seeOrderDetail">查看详情</button> -->
         <button class='btn' bindtap="cancelOrder" wx:if="{{params.orderStatus == 0 || params.orderStatus == 1 }}">取消订单</button>
         <button class='btn' bindtap="exchange" wx:if="{{params.orderStatus == 0 }}">立即兑换</button>

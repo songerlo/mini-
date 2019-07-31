@@ -21,7 +21,7 @@
             <van-button bind:click='konw'>我知道了</van-button>
         </view>
     </view>
-    <image src='/source/image/icon-shutdown.png' class='shut-down' bindtap='hideAlert'></image>
+    <image src='/source/image/icon-shutdown.png' class='shut-down' bindtap='konw'></image>
 </view>
 <!-- vip激活码弹出框 -->
 <view class='alert-vip bounceIn' wx:if="{{showAlertVip}}">

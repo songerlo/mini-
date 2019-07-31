@@ -1,27 +1,27 @@
 <!--components/shop-item.wxml-->
-<view class='goods-item-warp'>
-  <view class='goods-item {{ goodsIndex == 0 ? "" : "boder-top"}}'>
-    <view class='goods-item-l'>
-      <image src='{{goodsItem.ig_images}}'></image>
-    </view>
-    <view class='goods-item-r'>
-      <view class='goods-name'>{{goodsItem.ig_name}}</view>
-      <view class='goods-desc'>{{goodsItem.ig_features}}</view>
-      <view class='goods-item-r-b'>
-        <view class="goods-item-r-b-l">
-          <view class='goods-integral'>{{goodsItem.ig_price}}
-            <text>积分</text>
-          </view>
-          <!-- <block wx:for="{{goodsItem.ig_pk_price}}" wx:key="{{index}}">
+<view class='goods-item-warp' bindtap='goGoodsDetails' data-id="{{goodsItem.ig_id}}" data-sid="{{goodsItem.ig_sku_id}}">
+    <view class='goods-item {{ goodsIndex == 0 ? "" : "boder-top"}}'>
+        <view class='goods-item-l'>
+            <image src='{{goodsItem.ig_images}}'></image>
+        </view>
+        <view class='goods-item-r'>
+            <view class='goods-name'>{{goodsItem.ig_name}}</view>
+            <view class='goods-desc'>{{goodsItem.ig_features}}</view>
+            <view class='goods-item-r-b'>
+                <view class="goods-item-r-b-l">
+                    <view class='goods-integral'>{{goodsItem.ig_price}}
+                        <text>积分</text>
+                    </view>
+                    <!-- <block wx:for="{{goodsItem.ig_pk_price}}" wx:key="{{index}}">
             <text wx:if="{{index < 2}}">{{item.name}}:￥{{item.price}}</text>
           </block> -->
+                </view>
+                <view class="goods-item-r-b-r">
+                    <view class='goods-price'>
+                        <button class='btn-background'>马上兑换</button>
+                    </view>
+                </view>
+            </view>
         </view>
-        <view class="goods-item-r-b-r">
-          <view class='goods-price'>
-            <button class='btn-background' bindtap='goGoodsDetails' data-id="{{goodsItem.ig_id}}" data-sid="{{goodsItem.ig_sku_id}}">马上兑换</button>
-          </view>
-        </view>
-      </view>
     </view>
-  </view>
 </view>

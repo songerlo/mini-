@@ -1,6 +1,9 @@
 // pages/user/user.js
 const app = getApp()
 const request = require('../../utils/request');
+import {
+    userState
+} from '../../api/user.js'
 // import {
 //     userState
 // } from '../../api/user.js'
@@ -44,6 +47,18 @@ Page({
             //     }
             //   })
             // }
+    },
+    onLaunch: function() {},
+    onShow: function() {
+        userState()
+            .then(res => {
+                app.globalData.userInfo = res.data
+                this.setData({
+                    'userInfo.u_integral': res.data.u_integral,
+                    'userInfo.u_wxavatar': res.data.u_wxavatar,
+                    'userInfo.u_wxnickname': res.data.u_wxnickname,
+                })
+            })
     },
     getUserInfo: function(e) {
         app.globalData.userInfo.u_avatar = e.detail.userInfo.avatarUrl

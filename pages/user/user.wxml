@@ -6,11 +6,11 @@
                 <view class='btn_gift' bindtap="goSend">
                     <image class='icon_gift' src='/source/image/icon_gift.png' /> 积分转赠</view>
                 <view class='pic'>
-                    <image class='user_pic' src="{{ userInfo.u_avatar==='' ? '/source/image/1.jpg' : userInfo.u_avatar }}" />
+                    <image class='user_pic' src="{{ userInfo.u_wxavatar==='' ? '/source/image/1.jpg' : userInfo.u_wxavatar }}" />
                     <image class='icon_v' src='/source/image/icon_v.png' />
                 </view>
                 <view class='txt'>
-                    <view wx:if="{{userInfo.u_avatar!==''}}" class='name'>{{userInfo.nickName}}</view>
+                    <view wx:if="{{userInfo.u_wxnickname!==''}}" class='name'>{{userInfo.u_wxnickname}}</view>
                     <button wx:else class='name' bindgetuserinfo="getUserInfo" open-type="getUserInfo">点击设置昵称
                         <image class='icon_alert' src='/source/image/icon_alert.png' /></button>
                     <view class='jifen' bindtap="tabRecode">
@@ -41,10 +41,11 @@
                 <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
             </view>
         </view>
-        <view class='item' bindtap='tabUserActive' wx:if="{{ userInfo.u_type==0 }}">
-            <view class='item_l'>会员充值</view>
+        <!-- wx:if="{{ userInfo.u_type==0 }}" -->
+        <view class='item' bindtap='tabUserActive' wx:if="{{ userInfo.vip_status==0 }}">
+            <view class='item_l'>会员激活</view>
             <view class='item_r'>
-                <text class="txt">您的会员待激活</text>
+                <text class=" txt ">您的会员待激活</text>
                 <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
             </view>
         </view>
@@ -63,7 +64,7 @@
             </view>
         </view>
         <view class='item kefu-wrap'>
-            <button class="kefu" open-type="contact"></button>
+            <button class="kefu " open-type="contact"></button>
             <view class='item_l'>联系客服</view>
             <view class='item_r'>
                 <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
