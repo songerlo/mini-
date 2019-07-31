@@ -7,7 +7,8 @@ import {
     getTransfer
 } from '../../api/goods.js'
 import {
-  userState, getBanner
+    userState,
+    getBanner
 } from '../../api/user.js'
 import {
     veriryVip
@@ -26,7 +27,8 @@ Page({
         showMask: !1, //蒙层
         showAlertIntegral: !1, //积分赠送弹出框
         showAlertVip: !1, //vip激活弹出框
-        vipCode: '' //vip激活码
+        vipCode: '', //vip激活码
+        swiperList: []
     },
     onLoad() {
         this.init();
@@ -81,13 +83,13 @@ Page({
             // }
         }
     },
-    async getBanner () {
-      const res = await getBanner({})
-      if (res.code === 0) {
-        this.setData({
-          swiperList: res.data.data
-        })
-      }
+    async getBanner() {
+        const res = await getBanner({})
+        if (res.code === 0) {
+            this.setData({
+                swiperList: res.data
+            })
+        }
     },
     async konw() {
         const res = await getTransfer({

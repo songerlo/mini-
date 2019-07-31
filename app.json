@@ -18,7 +18,8 @@
     "pages/sendIntegral/sendIntegral",
     "pages/integral/integral",
     "pages/integral/rule",
-    "pages/userActive/index"
+    "pages/userActive/index",
+    "pages/ad/ad"
   ],
   "window": {
     "backgroundTextStyle": "light",

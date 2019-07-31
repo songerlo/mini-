@@ -104,6 +104,7 @@ Page({
             })
     },
     update(obj) {
+        console.log(obj)
         let arr = []
         this.initAll()
         this.loadOrdersList()

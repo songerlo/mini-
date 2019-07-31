@@ -1,81 +1,87 @@
 <!--pages/goodsDetail/goodsDetail.wxml-->
 <view class='goods-detail-container'>
-  <view class='goods-detail-top'>
-    <view class='swiper' wx:if="{{goodsData.ig_images.length > 0}}">
-      <swiper class="swiper-box" indicator-dots="{{swiperSetting.showDots}}" autoplay="{{swiperSetting.dots}}" interval="{{swiperSetting.interval}}" duration="{{swiperSetting.duration}}" indicator-color="{{swiperSetting.indicatorColor}}" indicator-active-color="{{swiperSetting.indicatorActiveColor}}"
-        current="{{swiperSetting.current}}" bindchange="swiperChange">
-        <block wx:for="{{goodsData.ig_images}}" wx:key="{{index}}">
-          <swiper-item>
-            <image src="{{item}}" class="slide-image" bindtap='previewSwiperImage' data-src="{{item}}" />
-          </swiper-item>
-        </block>
-      </swiper>
-      <view class='position-b' wx:if="{{goodsData.ig_images.length > 1}}">{{swiperSetting.current+1}}/{{goodsData.ig_images.length}}</view>
-    </view>
-    <view class='goods-intro'>
-      <view class='goods-name'>{{goodsData.ig_name}}</view>
-      <view class='goods-compare'>
-        <view class='goods-compare-left'>
-          <view class='integral'>{{goodsData.ig_price}}
-            <text>积分</text>
-          </view>
-          <view class='taobao'>
-            <block wx:for="{{goodsData.ig_pk_price}}" wx:key="{{index}}">
-              <block wx:if="{{index < 2}}">
-                <text>{{item.name}}:</text>
-                <text>￥{{item.price}}</text>
-              </block>
-            </block>
-          </view>
+    <view class='goods-detail-top'>
+        <view class='swiper' wx:if="{{goodsData.ig_images.length > 0}}">
+            <swiper class="swiper-box" indicator-dots="{{swiperSetting.showDots}}" autoplay="{{swiperSetting.dots}}" interval="{{swiperSetting.interval}}" duration="{{swiperSetting.duration}}" indicator-color="{{swiperSetting.indicatorColor}}" indicator-active-color="{{swiperSetting.indicatorActiveColor}}"
+                current="{{swiperSetting.current}}" bindchange="swiperChange">
+                <block wx:for="{{goodsData.ig_images}}" wx:key="{{index}}">
+                    <swiper-item>
+                        <image src="{{item}}" class="slide-image" bindtap='previewSwiperImage' data-src="{{item}}" />
+                    </swiper-item>
+                </block>
+            </swiper>
+            <view class='position-b' wx:if="{{goodsData.ig_images.length > 1}}">
+                {{swiperSetting.current+1}}/{{goodsData.ig_images.length}}</view>
         </view>
-        <button class='goods-share-btn' open-type='share'>
+        <view class='goods-intro'>
+            <view class='goods-name'>{{goodsData.ig_name}}</view>
+            <view class='goods-compare'>
+                <view class='goods-compare-left'>
+                    <view class='integral'>{{goodsData.ig_price}}
+                        <text>积分</text>
+                    </view>
+                    <view class='taobao'>
+                        <block wx:for="{{goodsData.ig_pk_price}}" wx:key="{{index}}">
+                            <block wx:if="{{index < 2}}">
+                                <text>{{item.name}}:</text>
+                                <text>￥{{item.price}}</text>
+                            </block>
+                        </block>
+                    </view>
+                </view>
+                <button class='goods-share-btn' open-type='share'>
           <image src='/source/image/icon-share.png'></image>
           <text>分享</text>
         </button>
-      </view>
-    </view>
-    <view class='goods-extends'>
-      <view class='goods-cell'>
-        <view class='goods-cell-left'>规格参数</view>
-        <view class='goods-cell-right'>{{goodsData.ig_features}}</view>
-      </view>
-      <view class='goods-cell'>
-        <view class='goods-cell-left'>兑换数量</view>
-        <view class='goods-cell-right'>
-          <van-stepper value="{{ goodsCount }}" bind:change="goodsCountChange" min="1" integer/>
+            </view>
         </view>
-      </view>
-      <view class='goods-cell'>
-        <view class='goods-cell-left'>包邮说明</view>
-        <view class='goods-cell-right is-link'>
-          <text>港澳台、云南、西藏等偏远地区需...</text>
-          <van-icon name='arrow'></van-icon>
+        <view class='goods-extends'>
+            <view class='goods-cell'>
+                <view class='goods-cell-left'>规格参数</view>
+                <view class='goods-cell-right'>{{goodsData.ig_features}}</view>
+            </view>
+            <view class='goods-cell'>
+                <view class='goods-cell-left'>兑换数量</view>
+                <view class='goods-cell-right'>
+                    <van-stepper value="{{ goodsCount }}" bind:change="goodsCountChange" min="1" integer />
+                </view>
+            </view>
+            <view class='goods-cell'>
+                <view class='goods-cell-left'>包邮说明</view>
+                <!-- <navigator url="../help/help" hover-class="navigator-hover" open-type="navigate"> -->
+                <view class='goods-cell-right is-link' bindtap="toHelp">
+                    <text>港澳台、云南、西藏等偏远地区需...</text>
+                    <van-icon name='arrow'></van-icon>
+                </view>
+                <!-- </navigator> -->
+            </view>
         </view>
-      </view>
     </view>
-  </view>
-  <view class='commitment'>
-    <commitment></commitment>
-  </view>
-  <view class='goods-details'>
-    <view class='adv'>
-    <rich-text nodes="{{goodsData.ig_description}}"></rich-text>
-      <!-- <image src='https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1566006158,2438571764&fm=173&app=49&f=PNG?w=218&h=146&s=5A22A0403ECF971B9822511F030050EA'></image> -->
+    <view class='commitment'>
+        <commitment></commitment>
     </view>
-  </view>
-  <view class='goods-detail-bottom'>
-    <view class='goods-detail-bottom-left'>
-      <button bindtap='backHome'>
+    <view class='goods-details'>
+        <view class="imgbox" bindtap="toAd">
+            <image class="" src="{{goodsData.ad.ad_image}}"></image>
+        </view>
+        <view class='adv'>
+            <rich-text nodes="{{goodsData.ig_description}}"></rich-text>
+            <!-- <image src='https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1566006158,2438571764&fm=173&app=49&f=PNG?w=218&h=146&s=5A22A0403ECF971B9822511F030050EA'></image> -->
+        </view>
+    </view>
+    <view class='goods-detail-bottom'>
+        <view class='goods-detail-bottom-left'>
+            <button bindtap='backHome'>
         <image src='/source/image/icon-home.png'></image>
         <text>首页</text>
       </button>
-      <button open-type='contact'>
+            <button open-type='contact'>
         <image src='/source/image/icon-kefu.png'></image>
         <text>客服</text>
       </button>
+        </view>
+        <view class='goods-detail-bottom-right {{userScore >= goodsPrice ? "active-btn" : "default-btn"}}'>
+            <button open-type='{{userScore >= goodsPrice ? "" : "contact"}}' bindtap='{{userScore >= goodsPrice ? "tapBuy" : ""}}'>{{userScore >= goodsPrice ? "立即兑换" : "积分不足，请联系客服"}}</button>
+        </view>
     </view>
-    <view class='goods-detail-bottom-right {{userScore >= goodsPrice ? "active-btn" : "default-btn"}}'>
-      <button open-type='{{userScore >= goodsPrice ? "" : "contact"}}' bindtap='{{userScore >= goodsPrice ? "tapBuy" : ""}}'>{{userScore >= goodsPrice ? "立即兑换" : "积分不足，请联系客服"}}</button>
-    </view>
-  </view>
 </view>

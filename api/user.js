@@ -52,9 +52,9 @@ export function getIntegra(data) {
 
 // 首页轮播图
 export function getBanner(data) {
-  return request({
-    url: '/api/user/register',
-    data,
-    method: 'POST'
-  })
+    return request({
+        url: '/IntegralIndex/banner',
+        data,
+        method: 'POST'
+    })
 }

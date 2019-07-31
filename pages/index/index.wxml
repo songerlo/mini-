@@ -3,67 +3,67 @@
 <view class='mask' wx:if="{{showMask}}"></view>
 <!-- 积分赠送弹出框 -->
 <view class='alert-integral bounceIn' wx:if="{{showAlertIntegral}}">
-  <image src='/source/image/index-integral.png' class='integral-bg'></image>
-  <view class='integral-avatar-list'>
-    <block wx:for="{{userState.transfer_user_avatars}}" wx:key="index">
-      <view class='integral-avatar-item' wx:if="{{index <= 3}}" style="z-index:{{100 - index}}">
-        <image src='{{item}}'></image>
-      </view>
-    </block>
-    <block wx:if="{{userState.transfer_user_avatars > 4}}">
-      <view class='integral-avatar-item'>
-        <image src='/source/image/icon-more.png'></image>
-      </view>
-    </block>
-    <view class='font-1'>送您积分了</view>
-    <view class='font-2'>快去兑换礼品吧</view>
-    <view class='btn-alert'>
-      <van-button bind:click='konw'>我知道了</van-button>
+    <image src='/source/image/index-integral.png' class='integral-bg'></image>
+    <view class='integral-avatar-list'>
+        <block wx:for="{{userState.transfer_user_avatars}}" wx:key="index">
+            <view class='integral-avatar-item' wx:if="{{index <= 3}}" style="z-index:{{100 - index}}">
+                <image src='{{item}}'></image>
+            </view>
+        </block>
+        <block wx:if="{{userState.transfer_user_avatars > 4}}">
+            <view class='integral-avatar-item'>
+                <image src='/source/image/icon-more.png'></image>
+            </view>
+        </block>
+        <view class='font-1'>送您积分了</view>
+        <view class='font-2'>快去兑换礼品吧</view>
+        <view class='btn-alert'>
+            <van-button bind:click='konw'>我知道了</van-button>
+        </view>
     </view>
-  </view>
-  <image src='/source/image/icon-shutdown.png' class='shut-down'  bindtap='hideAlert'></image>
+    <image src='/source/image/icon-shutdown.png' class='shut-down' bindtap='hideAlert'></image>
 </view>
 <!-- vip激活码弹出框 -->
 <view class='alert-vip bounceIn' wx:if="{{showAlertVip}}">
-  <view class='vip-top'>
-    <image src='/source/image/index-vip-bg.png' class='bg'></image>
-    <text class='time-line'>有效期：{{userState.vip_start}}-{{userState.vip_end}}</text>
-  </view>
-  <view class='code-warp'>
-    <view class='tip'>请输入激活码</view>
-    <input type='text' bindinput='vipCodeInput'></input>
-  </view>
-  <view class='btn-alert'>
-    <van-button bind:click='verifyVip' data-alert='2'>立即激活</van-button>
-  </view>
-  <image src='/source/image/icon-shutdown.png' class='shut-down' data-alert='2' bindtap='hideAlert'></image>
+    <view class='vip-top'>
+        <image src='/source/image/index-vip-bg.png' class='bg'></image>
+        <text class='time-line'>有效期：{{userState.vip_start}}-{{userState.vip_end}}</text>
+    </view>
+    <view class='code-warp'>
+        <view class='tip'>请输入激活码</view>
+        <input type='text' bindinput='vipCodeInput'></input>
+    </view>
+    <view class='btn-alert'>
+        <van-button bind:click='verifyVip' data-alert='2'>立即激活</van-button>
+    </view>
+    <image src='/source/image/icon-shutdown.png' class='shut-down' data-alert='2' bindtap='hideAlert'></image>
 </view>
 <!-- 页面 -->
 <view class='index-container'>
-  <view class='index-top' wx-if='{{swiperList.length > 0}}'>
-    <swiper class="swiper-box" indicator-dots="{{swiperSetting.showDots}}" autoplay="{{swiperSetting.dots}}" interval="{{swiperSetting.interval}}" duration="{{swiperSetting.duration}}" indicator-color="{{swiperSetting.indicatorColor}}" indicator-active-color="{{swiperSetting.indicatorActiveColor}}">
-      <block wx:for="{{swiperList}}" wx:key="{{index}}">
-        <swiper-item>
-          <image src="{{item.am_image}}" class="slide-image" data-src="{{item.am_image}}"/>
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
-  <view class='commitment'>
-    <commitment></commitment>
-  </view>
-  <block wx:for="{{modules}}" wx:key="{{index}}" wx:for-item="goodsModle">
-    <view class='goods-list'>
-      <view class='good-title'>
-        <view class='laber'>{{goodsModle.igm_name}}</view>
-        <view class='more' bindtap='goMore' data-id="{{goodsModle.igm_id}}">
-          <text>更多</text>
-          <van-icon name='arrow' size="20rpx"></van-icon>
-        </view>
-      </view>
-      <block wx:for="{{goodsModle.goods}}" wx:key="{{index}}" wx:for-item="goodsItem">
-        <goods-item goodsItem="{{goodsItem}}" goodsIndex="{{index}}"></goods-item>
-      </block>
+    <view class='index-top' wx-if='{{swiperList.length > 0}}'>
+        <swiper class="swiper-box" indicator-dots="{{swiperSetting.showDots}}" autoplay="{{swiperSetting.autoplay}}" interval="{{swiperSetting.interval}}" duration="{{swiperSetting.duration}}" indicator-color="{{swiperSetting.indicatorColor}}" indicator-active-color="{{swiperSetting.indicatorActiveColor}}">
+            <block wx:for="{{swiperList}}" wx:key="{{index}}">
+                <swiper-item>
+                    <image src="{{item.am_image}}" class="slide-image" data-src="{{item.am_image}}" />
+                </swiper-item>
+            </block>
+        </swiper>
     </view>
-  </block>
+    <view class='commitment'>
+        <commitment></commitment>
+    </view>
+    <block wx:for="{{modules}}" wx:key="{{index}}" wx:for-item="goodsModle">
+        <view class='goods-list'>
+            <view class='good-title'>
+                <view class='laber'>{{goodsModle.igm_name}}</view>
+                <view class='more' bindtap='goMore' data-id="{{goodsModle.igm_id}}">
+                    <text>更多</text>
+                    <van-icon name='arrow' size="20rpx"></van-icon>
+                </view>
+            </view>
+            <block wx:for="{{goodsModle.goods}}" wx:key="{{index}}" wx:for-item="goodsItem">
+                <goods-item goodsItem="{{goodsItem}}" goodsIndex="{{index}}"></goods-item>
+            </block>
+        </view>
+    </block>
 </view>
