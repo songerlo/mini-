@@ -80,8 +80,8 @@
                 <text>客服</text>
             </button>
         </view>
-        <view class='goods-detail-bottom-right {{userScore >= goodsPrice*goodsCount ? "active-btn" : "default-btn"}}'>
-            <button open-type='{{userScore >= goodsPrice*goodsCount ? "" : "contact"}}' bindtap='{{userScore >= goodsPrice ? "tapBuy" : ""}}'>{{userScore >= goodsPrice*goodsCount ? "立即兑换" : "积分不足，请联系客服"}}</button>
+        <view class='goods-detail-bottom-right {{userScore >= goodsPrice ? "active-btn" : "default-btn"}}'>
+            <button open-type='{{userScore >= goodsPrice ? "" : "contact"}}' bindtap='{{userScore >= goodsPrice ? "tapBuy" : ""}}'>{{userScore >= goodsPrice ? "立即兑换" : "积分不足，请联系客服"}}</button>
         </view>
     </view>
 </view>
