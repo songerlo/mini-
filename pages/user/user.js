@@ -20,36 +20,36 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function (options) {
         app.globalData.userInfo.u_avatar = wx.getStorageSync('user_avatar')
         app.globalData.userInfo.nickName = wx.getStorageSync('nickName')
         this.setData({
-                userInfo: app.globalData.userInfo,
-            })
-            // else if (this.data.canIUse) {
-            //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-            //   // 所以此处加入 callback 以防止这种情况
-            //   app.userInfoReadyCallback = res => {
-            //     this.setData({
-            //       userInfo: res.userInfo,
-            //       hasUserInfo: true
-            //     })
-            //   }
-            // } else {
-            //   // 在没有 open-type=getUserInfo 版本的兼容处理
-            //   wx.getUserInfo({
-            //     success: res => {
-            //       app.globalData.userInfo = res.userInfo
-            //       this.setData({
-            //         userInfo: res.userInfo,
-            //         hasUserInfo: true
-            //       })
-            //     }
-            //   })
-            // }
+            userInfo: app.globalData.userInfo,
+        })
+        // else if (this.data.canIUse) {
+        //   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        //   // 所以此处加入 callback 以防止这种情况
+        //   app.userInfoReadyCallback = res => {
+        //     this.setData({
+        //       userInfo: res.userInfo,
+        //       hasUserInfo: true
+        //     })
+        //   }
+        // } else {
+        //   // 在没有 open-type=getUserInfo 版本的兼容处理
+        //   wx.getUserInfo({
+        //     success: res => {
+        //       app.globalData.userInfo = res.userInfo
+        //       this.setData({
+        //         userInfo: res.userInfo,
+        //         hasUserInfo: true
+        //       })
+        //     }
+        //   })
+        // }
     },
-    onLaunch: function() {},
-    onShow: function() {
+    onLaunch: function () {},
+    onShow: function () {
         userState()
             .then(res => {
                 app.globalData.userInfo = res.data
@@ -61,7 +61,7 @@ Page({
                 })
             })
     },
-    getUserInfo: function(e) {
+    getUserInfo: function (e) {
         app.globalData.userInfo.u_avatar = e.detail.userInfo.avatarUrl
         app.globalData.userInfo.nickName = e.detail.userInfo.nickName
         wx.setStorageSync('user_avatar', e.detail.userInfo.avatarUrl)
@@ -74,12 +74,13 @@ Page({
             .then(res => {
                 app.globalData.userInfo = res.data
                 this.setData({
-                    'userInfo.u_integral': res.data.u_integral,
-                    'userInfo.u_wxavatar': res.data.u_wxavatar,
-                    'userInfo.u_wxnickname': res.data.u_wxnickname,
+                    // 'userInfo.u_integral': res.data.u_integral,
+                    // 'userInfo.u_wxavatar': res.data.u_wxavatar,
+                    // 'userInfo.u_wxnickname': res.data.u_wxnickname,
+                    userInfo: res.data
                 })
             })
-            // upload avatarUrl
+        // upload avatarUrl
     },
     getUserImg() {
         request({
@@ -91,23 +92,23 @@ Page({
             }
         })
     },
-    tapOrder: function(e) {
+    tapOrder: function (e) {
         const type = e.currentTarget.dataset.type
         app.navigateTo({
             url: '/pages/order/list?type=' + type
         })
     },
-    tabAddress: function() {
+    tabAddress: function () {
         app.navigateTo({
             url: '/pages/address/list'
         })
     },
-    tabRecode: function() {
+    tabRecode: function () {
         app.navigateTo({
             url: '/pages/integral/integral'
         })
     },
-    tabRecharge: function() {
+    tabRecharge: function () {
         app.navigateTo({
             url: '/pages/recharge/index'
         })
