@@ -6,7 +6,7 @@
                 <view class='btn_gift' bindtap="goSend">
                     <image class='icon_gift' src='/source/image/icon_gift.png' /> 积分转赠</view>
                 <view class='pic'>
-                    <image class='user_pic' src="{{ userInfo.u_wxavatar==='' ? '/source/image/1.jpg' : userInfo.u_wxavatar }}" />
+                    <image class='user_pic' src="{{ userInfo.u_wxavatar==='' ? '/source/image/1.png' : userInfo.u_wxavatar }}" />
                     <image class='icon_v' src='/source/image/icon_v.png' />
                 </view>
                 <view class='txt'>

@@ -5,11 +5,14 @@
 <view class='alert-integral bounceIn' wx:if="{{showAlertIntegral}}">
     <image src='/source/image/index-integral.png' class='integral-bg'></image>
     <view class='integral-avatar-list'>
-        <block wx:for="{{userState.transfer_user_avatars}}" wx:key="index">
+        <block wx:for="{{userState.transfer_user_avatars}}" wx:key="index" wx:if="userState.transfer_user_avatars.length > 1">
             <view class='integral-avatar-item' wx:if="{{index <= 3}}" style="z-index:{{100 - index}}">
                 <image src='{{item}}'></image>
             </view>
         </block>
+        <view else>
+            <image src="../source/image/1.png"></image>
+        </view>
         <block wx:if="{{userState.transfer_user_avatars > 4}}">
             <view class='integral-avatar-item'>
                 <image src='/source/image/icon-more.png'></image>
