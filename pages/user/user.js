@@ -21,8 +21,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        app.globalData.userInfo.u_avatar = wx.getStorageSync('user_avatar')
-        app.globalData.userInfo.nickName = wx.getStorageSync('nickName')
+        // app.globalData.userInfo.u_avatar = wx.getStorageSync('user_avatar')
+        // app.globalData.userInfo.nickName = wx.getStorageSync('nickName')
         this.setData({
             userInfo: app.globalData.userInfo,
         })
@@ -54,14 +54,12 @@ Page({
             .then(res => {
                 app.globalData.userInfo = res.data
                 this.setData({
-                    // 'userInfo.u_integral': res.data.u_integral,
-                    // 'userInfo.u_wxavatar': res.data.u_wxavatar,
-                    // 'userInfo.u_wxnickname': res.data.u_wxnickname,
                     userInfo: res.data
                 })
             })
     },
     getUserInfo: function (e) {
+        console.log(e)
         app.globalData.userInfo.u_avatar = e.detail.userInfo.avatarUrl
         app.globalData.userInfo.nickName = e.detail.userInfo.nickName
         wx.setStorageSync('user_avatar', e.detail.userInfo.avatarUrl)

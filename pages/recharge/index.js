@@ -55,10 +55,12 @@ Page({
         const rechargeList = [...this.data.rechargeList];
         if (!e.currentTarget.dataset.isselect) {
             let payAmount = 0;
+            let integral = 0;
             rechargeList.forEach((currentTarget, index) => {
                 if (currentTarget.isSelect) currentTarget.isSelect = !1;
             })
-            payAmount = rechargeList[e.currentTarget.dataset.index].price;
+            payAmount = +rechargeList[e.currentTarget.dataset.index].price;
+            integral = +rechargeList[e.currentTarget.dataset.index].integral;
             rechargeList[e.currentTarget.dataset.index].isSelect = !0
             if (!this.data.isSelect) {
                 this.setData({
@@ -68,8 +70,9 @@ Page({
             this.setData({
                 rechargeList,
                 isFocus: !1,
-                payAmount
+                payAmount,
             })
+          this.data.inputAmount = integral
         } else {
             console.log(1)
             rechargeList[e.currentTarget.dataset.index].isSelect = !1;

@@ -13,7 +13,8 @@ Page({
         },
         isTap: 0,
         goodslist: [],
-        showEnd: !1
+        showEnd: !1,
+        flag: false
     },
 
     /**
@@ -28,35 +29,44 @@ Page({
         this.loadList();
     },
     loadList() {
-        let isTap = this.data.isTap,
-            defaultSetting = this.data.defaultSetting;
+        let isTap = this.data.isTap
+        let defaultSetting = this.data.defaultSetting;
+        if(this.data.flag){
+          return false
+        }
+        this.setData({
+          flag: true
+        })
         moduleList({
-                igm_id: this.igm_id,
-                sort: isTap == 0 ?
-                    0 : isTap == 1 && defaultSetting.highVolume ?
-                    1 : isTap == 1 && !defaultSetting.highVolume ?
-                    2 : isTap == 2 && !defaultSetting.highintegral ?
-                    3 : 4,
-                page: this.page,
-                pageSize: 20
-            })
-            .then(res => {
-                console.log(res)
-                if (res.code == 0) {
-                    this.page++;
-                    if (res.data.goods.data.length > 0) {
-                        this.setData({
-                            goodslist: [...res.data.goods.data, ...this.data.goodslist]
-                        })
-                    }
-                    if (res.data.goods.data.length < 20) {
-                        this.setData({
-                            showEnd: !0
-                        })
-                    }
-                    wx.hideLoading();
-                }
-            })
+          igm_id: this.igm_id,
+          sort: isTap == 0 ?
+            0 : isTap == 1 && defaultSetting.highVolume ?
+              1 : isTap == 1 && !defaultSetting.highVolume ?
+                2 : isTap == 2 && !defaultSetting.highintegral ?
+                  3 : 4,
+          page: this.page,
+          pageSize: 20
+        })
+          .then(res => {
+            console.log(res)
+            if (res.code == 0) {
+              this.page++;
+              if (res.data.goods.data.length > 0) {
+                this.setData({
+                  goodslist: [...res.data.goods.data, ...this.data.goodslist]
+                })
+              }
+              if (res.data.goods.data.length < 20) {
+                this.setData({
+                  showEnd: !0
+                })
+              }
+              this.setData({
+                flag: false
+              })
+              wx.hideLoading();
+            }
+          })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

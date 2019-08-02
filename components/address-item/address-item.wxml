@@ -3,7 +3,7 @@
     <view class='user-info' bindtap="tapAddress">
         <text class='user-name'>{{addressItem.name}}</text>
         <text class='user-telephone'>{{addressItem.phone}}</text>
-        <van-tag color="#FE6D2E" round plain wx:if="{{addressItem.is_default}}">默认</van-tag>
+        <view class="tag" wx:if="{{addressItem.is_default}}">默认</view>
     </view>
     <view class='address-info'>
         <view class='address-desc' bindtap="tapAddress">

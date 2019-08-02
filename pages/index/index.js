@@ -141,5 +141,10 @@ Page({
                     this.hideAlert();
                 }
             })
-    }
+    },
+    toJump(e) {
+      wx.navigateTo({
+        url: e.target.dataset.src
+      })
+    },
 })

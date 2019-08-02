@@ -44,6 +44,10 @@ Page({
         this.loadOrdersList()
     },
     loadOrdersList: function() {
+        wx.showLoading({
+          title: 'loading...',
+          mask: true
+        })
         orderList({
                 status: this.data.active,
                 page: this.data.active === 0 ?

@@ -44,7 +44,7 @@
         <swiper class="swiper-box" indicator-dots="{{swiperSetting.showDots}}" autoplay="{{swiperSetting.autoplay}}" interval="{{swiperSetting.interval}}" duration="{{swiperSetting.duration}}" indicator-color="{{swiperSetting.indicatorColor}}" indicator-active-color="{{swiperSetting.indicatorActiveColor}}">
             <block wx:for="{{swiperList}}" wx:key="{{index}}">
                 <swiper-item>
-                    <image src="{{item.am_image}}" class="slide-image" data-src="{{item.am_image}}" />
+                    <image bindtap="toJump" src="{{item.am_image}}" class="slide-image" data-src="{{item.am_url}}" />
                 </swiper-item>
             </block>
         </swiper>

@@ -13,6 +13,7 @@
 
 .user-name {
   font-size: 32rpx;
+  float: left;
 }
 
 .user-telephone {
@@ -20,6 +21,7 @@
   color: #999999;
   margin-left: 30rpx;
   margin-right: 30rpx;
+  float: left
 }
 
 .address-info {
@@ -42,4 +44,16 @@
   height: 42rpx;
   float: right;
   padding:  10rpx;
+}
+
+.tag {
+  float:left;
+  color: #FE6D2E;
+  border: solid 1px #FE6D2E;
+  width:30px;
+  height:16px;
+  font-size:10px;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 5rpx;
 }

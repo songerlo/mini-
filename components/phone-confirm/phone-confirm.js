@@ -83,6 +83,7 @@ Component({
                 })
                 return;
             }
+          // if (phoneNumber)
             this.triggerEvent('hidePhoneConfirm', {
                     code: this.data.phoneCode
                 })

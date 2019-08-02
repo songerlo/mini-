@@ -30,7 +30,7 @@
     position: absolute;
     right: -36rpx;
     top: 60rpx;
-    background: #FFB423;
+    background: linear-gradient(rgb(255, 225, 92),#FFB423);
     width: 190rpx;
     height: 50rpx;
     line-height: 50rpx;
@@ -81,13 +81,15 @@
     line-height: 36rpx;
     color: #25294D;
     font-size: 36rpx;
-    margin-bottom: 20rpx
+    margin-bottom: 20rpx;
+    margin-top: 15rpx;
 }
 
 .user .info .user_info .txt .jifen {
     line-height: 36rpx;
     color: #959595;
     font-size: 32rpx;
+    font-weight: bold;
 }
 
 .user .info .menu {
@@ -125,6 +127,10 @@
     border-radius: 10rpx;
 }
 
+.user .list view:first-child {
+  margin-top: 15rpx;
+}
+
 .user .list .item {
     display: flex;
     align-items: center;
@@ -132,7 +138,7 @@
     padding: 0 30rpx;
     height: 100rpx;
     line-height: 100rpx;
-    margin-top: 15rpx;
+    /* margin-top: 15rpx; */
     border-bottom: 1rpx solid #E5E5E5;
 }
 

@@ -50,5 +50,6 @@
         <text>下单时间：{{orderData.createTime}}</text>
         <text>配送方式：快递</text>
         <text>消耗积分：{{orderData.orderTotal}}</text>
+        <text>订单留言：{{orderData.u_message}}</text>
     </view>
 </view>

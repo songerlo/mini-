@@ -2,5 +2,5 @@
   "usingComponents": {
     "phone-confirm": "/components/phone-confirm/phone-confirm"
   },
-  "navigationBarTitleText": "转增好友"
+  "navigationBarTitleText": "转赠好友"
 }

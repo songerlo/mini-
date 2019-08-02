@@ -72,7 +72,7 @@
   background-color: #ffffff;
 }
 .default-1 {
-  font-size: 30rpx;
+  font-size: 14px;
   color: #333333;
 }
 .default-2 {
@@ -82,7 +82,8 @@
 }
 
 .area .area-title{
-  flex: 0.45;
+  width: 90px;
+  flex: 0.55;
 }
 .area .area-value {
   flex: 1.5;

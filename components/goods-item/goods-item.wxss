@@ -81,3 +81,6 @@
   float: right;
   background-image: linear-gradient( #FED431, #FFB423);
 }
+.goods-price button::after {
+  border: none;
+}

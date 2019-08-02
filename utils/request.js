@@ -74,7 +74,7 @@ module.exports = function(t) {
                 return reject(res);
             },
             complete: function() {
-                // wx.hideLoading()
+                wx.hideLoading()
             }
         })
     })
