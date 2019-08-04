@@ -7,7 +7,7 @@
                     <image class='icon_gift' src='/source/image/icon_gift.png' /> 积分转赠</view>
                 <view class='pic'>
                     <image class='user_pic' src="{{ userInfo.u_wxavatar==='' ? '/source/image/1.png' : userInfo.u_wxavatar }}" />
-                    <image class='icon_v' src='/source/image/icon_v.png' />
+                    <image class='icon_v' src='/source/image/icon_v.png' wx:if="{{userInfo.vip_status == 1}}"/>
                 </view>
                 <view class='txt'>
                     <view wx:if="{{userInfo.u_wxnickname!==''}}" class='name'>{{userInfo.u_wxnickname}}</view>

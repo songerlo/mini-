@@ -28,7 +28,7 @@ Page({
         showAlertIntegral: !1, //积分赠送弹出框
         showAlertVip: !1, //vip激活弹出框
         vipCode: '', //vip激活码
-        swiperList: []
+        swiperList: [],
     },
     onLoad() {
         this.init();
@@ -59,7 +59,12 @@ Page({
             this.setData({
                 userState: res.data
             })
-
+            console.log(this.data.userState)
+          if (this.data.userState.transfer_user_avatars.length==0){
+            this.setData({
+              'userState.transfer_user_avatars[0]': '../source/1.png'
+            })
+          }
             getApp().globalData.userInfo = res.data
             this.vip_status = res.data.vip_status //vip 状态
             this.has_transfer = res.data.has_transfer
