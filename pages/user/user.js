@@ -111,6 +111,11 @@ Page({
             url: '/pages/recharge/index'
         })
     },
+  tabRecharge1: function () {
+    app.navigateTo({
+      url: '/pages/help1/help1'
+    })
+  },
     tabUserActive() {
         app.navigateTo({
             url: '/pages/userActive/index'
@@ -118,7 +123,7 @@ Page({
     },
     goHelp() {
         app.navigateTo({
-            url: '/pages/help/help'
+          url: '/pages/help/help'
         })
     },
     goSend() {

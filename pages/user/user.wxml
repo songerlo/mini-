@@ -1,74 +1,83 @@
 <!--pages/user/user.wxml-->
 <view class='user'>
-    <view class='user_box'>
-        <view class='info'>
-            <view class='user_info'>
-                <view class='btn_gift' bindtap="goSend">
-                    <image class='icon_gift' src='/source/image/icon_gift.png' /> 积分转赠</view>
-                <view class='pic'>
-                    <image class='user_pic' src="{{ userInfo.u_wxavatar==='' ? '/source/image/1.png' : userInfo.u_wxavatar }}" />
-                    <image class='icon_v' src='/source/image/icon_v.png' wx:if="{{userInfo.vip_status == 1}}"/>
-                </view>
-                <view class='txt'>
-                    <view wx:if="{{userInfo.u_wxnickname!==''}}" class='name'>{{userInfo.u_wxnickname}}</view>
-                    <button wx:else class='name' bindgetuserinfo="getUserInfo" open-type="getUserInfo">点击设置昵称
-                        <image class='icon_alert' src='/source/image/icon_alert.png' /></button>
-                    <view class='jifen' bindtap="tabRecode">
-                        <image class='icon_jifen' src='/source/image/icon_jifen.png' /> {{userInfo.u_integral}}</view>
-                </view>
-            </view>
-            <view class='menu'>
-                <view class='item' bindtap='tapOrder' data-type='0'>
-                    <image src='/source/image/icon_order.png' />
-                    <text class='txt'>全部订单</text>
-                </view>
-                <view class='item' bindtap='tapOrder' data-type='1'>
-                    <image src='/source/image/icon_unpay.png' />
-                    <text class='txt'>待消耗</text>
-                </view>
-                <view class='item' bindtap='tapOrder' data-type='2'>
-                    <image src='/source/image/icon_unship.png' />
-                    <text class='txt'>待发货</text>
-                </view>
-            </view>
+  <view class='user_box'>
+    <view class='info'>
+      <view class='user_info'>
+        <view class='btn_gift' bindtap="goSend">
+          <image class='icon_gift' src='/source/image/icon_gift.png' /> 积分转赠</view>
+        <view class='pic'>
+          <image class='user_pic' src="{{ userInfo.u_wxavatar==='' ? '/source/image/1.png' : userInfo.u_wxavatar }}" />
+          <image class='icon_v' src='/source/image/icon_v.png' wx:if="{{userInfo.vip_status == 1}}" />
         </view>
+        <view class='txt'>
+          <view wx:if="{{userInfo.u_wxnickname!==''}}" class='name'>{{userInfo.u_wxnickname}}</view>
+          <button wx:else class='name' bindgetuserinfo="getUserInfo" open-type="getUserInfo">点击设置昵称
+            <image class='icon_alert' src='/source/image/icon_alert.png' />
+          </button>
+          <view class='jifen' bindtap="tabRecode">
+            <image class='icon_jifen' src='/source/image/icon_jifen.png' /> {{userInfo.u_integral}}</view>
+        </view>
+      </view>
+      <view class='menu'>
+        <view class='item' bindtap='tapOrder' data-type='0'>
+          <image src='/source/image/icon_order.png' />
+          <text class='txt'>全部订单</text>
+        </view>
+        <view class='item' bindtap='tapOrder' data-type='1'>
+          <image src='/source/image/icon_unpay.png' />
+          <text class='txt'>待消耗</text>
+        </view>
+        <view class='item' bindtap='tapOrder' data-type='2'>
+          <image src='/source/image/icon_unship.png' />
+          <text class='txt'>待发货</text>
+        </view>
+      </view>
     </view>
-    <view class='list'>
-        <view class='item' bindtap='tabRecharge' wx:if="{{ userInfo.u_type == 1 }}">
-            <view class='item_l'>积分充值</view>
-            <view class='item_r'>
-                <text class="txt">会员充值，享5倍积分</text>
-                <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
-            </view>
-        </view>
-        <!-- wx:if="{{ userInfo.u_type==0 }}" -->
-        <view class='item' bindtap='tabUserActive' wx:if="{{ userInfo.vip_status==0 }}">
-            <view class='item_l'>会员激活</view>
-            <view class='item_r'>
-                <text class=" txt ">您的会员待激活</text>
-                <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
-            </view>
-        </view>
+  </view>
+  <view class='list'>
+    <view class='item' bindtap='tabRecharge1' wx:if="{{ userInfo.u_type == 1 }}">
+      <view class='item_l'>会员特权</view>
+      <view class='item_r'>
+        <!-- <text class="txt">会员充值，享5倍积分</text> -->
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
+      </view>
     </view>
-    <view class='list'>
-        <view class='item' bindtap='tabAddress'>
-            <view class='item_l'>地址管理</view>
-            <view class='item_r'>
-                <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
-            </view>
-        </view>
-        <view class='item' bindtap="goHelp">
-            <view class='item_l'>帮助中心</view>
-            <view class='item_r'>
-                <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
-            </view>
-        </view>
-        <view class='item kefu-wrap'>
-            <button class="kefu " open-type="contact"></button>
-            <view class='item_l'>联系客服</view>
-            <view class='item_r'>
-                <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
-            </view>
-        </view>
+    <view class='item' bindtap='tabRecharge' wx:if="{{ userInfo.u_type == 1 }}">
+      <view class='item_l'>积分充值</view>
+      <view class='item_r'>
+        <text class="txt">会员充值，享5倍积分</text>
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
+      </view>
     </view>
+
+    <!-- wx:if="{{ userInfo.u_type==0 }}" -->
+    <view class='item' bindtap='tabUserActive' wx:if="{{ userInfo.vip_status==0 }}">
+      <view class='item_l'>会员激活</view>
+      <view class='item_r'>
+        <text class=" txt ">您的会员待激活</text>
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='item' bindtap='tabAddress'>
+      <view class='item_l'>地址管理</view>
+      <view class='item_r'>
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
+      </view>
+    </view>
+    <view class='item' bindtap="goHelp">
+      <view class='item_l'>帮助中心</view>
+      <view class='item_r'>
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
+      </view>
+    </view>
+    <view class='item kefu-wrap'>
+      <button class="kefu " open-type="contact"></button>
+      <view class='item_l'>联系客服</view>
+      <view class='item_r'>
+        <image class='icon_arrow' src='/source/image/icon_arrowR.png' />
+      </view>
+    </view>
+  </view>
 </view>

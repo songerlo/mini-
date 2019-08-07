@@ -15,6 +15,7 @@
     "pages/recharge/recode",
     "pages/recharge/index",
     "pages/help/help",
+    "pages/help1/help1",
     "pages/sendIntegral/sendIntegral",
     "pages/integral/integral",
     "pages/integral/rule",

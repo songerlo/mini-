@@ -1,0 +1,9 @@
+<!--pages/help/help.wxml-->
+<view class="content">
+   <view class="title">会员特权：</view>
+  <view class="p"><text class="x">充值特权：</text>会员享有五倍充值特权，例：充值10元=50积分，依此类推。
+  </view>
+  <view class="p"><text class="x">充值须知：</text>已充值积分可用于商品兑换及积分转赠，不可兑换现金使用。</view>
+  <view class="p"><text class="x">转赠特权：</text>点击下方积分转赠——输入对方手机号码——输入需转赠积分——提交。即可完成积分转赠。注：转赠积分一经转出无法退回，请务必确认是否转赠及转赠账号准确无误。</view>
+  <view class="p"><text class="x">更多特权：</text>后期会员拥有新会员邀请特权，具体福利及权限待另行通知。</view>
+</view>
