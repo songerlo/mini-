@@ -51,7 +51,10 @@ Component({
             })
         },
         confirm() {
-
+          console.log(1)
+          this.triggerEvent('confirms', {
+            orderSn: this.data.params.orderSn
+          })
         }
     },
 

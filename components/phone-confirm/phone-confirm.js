@@ -35,14 +35,24 @@ Component({
             this.setData({
                 phoneCode: e.detail.value
             })
+          if (this.data.phoneCode!==''){
+            this.setData({
+              ifCode: !0
+            })
+          }else {
+            this.setData({
+              ifCode: !1
+            })
+          }
         },
         getCode(e) {
             if (!this.data.canSendCode) {
                 return
             }
-            // this.setData({
-            //     confirmLoading: !0
-            // })
+            this.setData({
+                // confirmLoading: !0
+              ifCode: !0,
+            })
             sendCode()
                 .then(res => {
                     this.setData({
@@ -98,9 +108,12 @@ Component({
             })
         },
         hide() {
+            this.setData({
+              showPhoneConfirm: !1
+            })
             this.triggerEvent('hidePhoneConfirm', {})
             if (this.properties.isJump) {
-                wx.navigateTo({
+              wx.redirectTo({
                     url: "../../pages/order/list?type=1",
                 })
             }

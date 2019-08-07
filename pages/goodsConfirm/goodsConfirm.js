@@ -186,10 +186,10 @@ Page({
         if (e.detail.code) {
             this.doPay(+e.detail.code);
         }else {
-          wx.showToast({
-            title: '验证码不能为空',
-            icon: 'none'
-          })
+          // wx.showToast({
+          //   title: '验证码不能为空',
+          //   icon: 'none'
+          // })
           return
         }
         this.setData({

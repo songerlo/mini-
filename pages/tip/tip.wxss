@@ -24,6 +24,7 @@ page{
   font-size: 36rpx;
   font-weight: bold;
   text-align: center;
+  margin-top: 10rpx;
 }
 .tip-btn{
   margin-top: 150rpx;
@@ -47,6 +48,7 @@ page{
   color: #FFB423;
   border: 2rpx solid #FFB423;
   background-color:#ffffff;
+  border-radius:20rpx;
 }
 .active-btn{
   background-image: linear-gradient(0deg, #FED431, #FFB423);

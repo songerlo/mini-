@@ -19,7 +19,7 @@ Page({
             showDots: !1, //指示点
             autoplay: !0, //自动播放
             interval: 5000, //自动播放时间间隔
-            duration: 1000, //自动播放时间
+            duration: 300, //自动播放时间
             indicatorColor: 'rgba(255, 255, 255, .7)', //指示点默认颜色
             indicatorActiveColor: '#ffffff', //指示点选中颜色
             current: 0, //默认录播图                                   
@@ -75,7 +75,10 @@ Page({
                         arr.push(e)
                     })
                     res.data.ig_images = arr
-                    console.log(res.data)
+                  console.log(res.data.ig_description);
+                  res.data.ig_description = res.data.ig_description.replace(/width\s*:\s*[0-9]+px/g, 'width:100%');
+                  res.data.ig_description = res.data.ig_description.replace(/<([\/]?)(center)((:?\s*)(:?[^>]*)(:?\s*))>/g, '<$1div$3>');//替换center标签
+                  res.data.ig_description = res.data.ig_description.replace(/\<img/gi, '<img class="rich-img" ');//正则给img标签增加class
                     this.setData({
                         goodsData: res.data,
                         goodsPrice: this.goodsPrice
@@ -171,10 +174,6 @@ Page({
             num: this.data.goodsCount
         }).then(res => {
             if (res.code !== 0) {
-                wx.showToast({
-                    title: res.message,
-                    icon: 'none'
-                })
                 return
             }
             app.navigateTo({

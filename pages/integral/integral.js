@@ -4,7 +4,6 @@ import {
 } from '../../api/order.js'
 const app = getApp()
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -37,7 +36,8 @@ Page({
     loadOrdersList() {
         integralLog({
                 type: this.data.active,
-                page: this.data.active === 0 ? this.data.allListPage : this.data.active === 1 ? this.data.incomepPage : this.data.active === 2 ? this.data.outPage : -1
+                page: this.data.active === 0 ? this.data.allListPage : this.data.active === 1 ? this.data.incomepPage : this.data.active === 2 ? this.data.outPage : -1,
+                pageSize: 10
             })
             .then(res => {
                 console.log(res)

@@ -38,6 +38,9 @@
     color: #fff;
     font-size: 24rpx;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user .info .user_info .btn_gift .icon_gift {
@@ -125,10 +128,11 @@
     margin: 0 auto;
     background: #fff;
     border-radius: 10rpx;
+    margin-top: 15rpx;
 }
 
 .user .list view:first-child {
-  margin-top: 15rpx;
+  /* margin-top: 15rpx; */
 }
 
 .user .list .item {

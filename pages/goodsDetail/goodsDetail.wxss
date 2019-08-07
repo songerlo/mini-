@@ -238,3 +238,15 @@
 .imgbox image {
     width: 100%;
 }
+.son image {
+  max-width: 100%;
+}
+.rich-img{
+    width: 100%;
+    /* margin: 20rpx 0; */
+}
+/* .rich-p{
+    color: #333333;
+    font-size: 32rpx;
+    line-height: 45rpx;
+} */

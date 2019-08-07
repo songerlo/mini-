@@ -21,10 +21,10 @@
                         <text>积分</text>
                     </view>
                     <view class='taobao'>
-                        <block wx:for="{{goodsData.ig_pk_price}}" wx:key="{{index}}">
-                            <block wx:if="{{index < 2}}">
-                                <text>{{item.name}}:</text>
-                                <text>￥{{item.price}}</text>
+                        <block>
+                            <block>
+                                <text>{{goodsData.ig_pk_price}}</text>
+                                <!-- <text>￥{{item.price}}</text> -->
                             </block>
                         </block>
                     </view>
@@ -51,7 +51,7 @@
                 <!-- <navigator url="../help/help" hover-class="navigator-hover" open-type="navigate"> -->
                 <view class='goods-cell-right is-link' bindtap="toHelp">
                     <text>港澳台、云南、西藏等偏远地区需...</text>
-                    <van-icon name='arrow'></van-icon>
+                    <van-icon name='arrow' color="#999999"></van-icon>
                 </view>
                 <!-- </navigator> -->
             </view>
@@ -65,7 +65,7 @@
             <image class="" src="{{goodsData.ad.ad_image}}"></image>
         </view>
         <view class='adv'>
-            <rich-text nodes="{{goodsData.ig_description}}"></rich-text>
+            <rich-text nodes="{{goodsData.ig_description}}" class="son"></rich-text>
             <!-- <image src='https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1566006158,2438571764&fm=173&app=49&f=PNG?w=218&h=146&s=5A22A0403ECF971B9822511F030050EA'></image> -->
         </view>
     </view>

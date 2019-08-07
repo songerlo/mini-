@@ -3,7 +3,7 @@ import {
     orderList
 } from '../../api/order.js'
 import {
-    doPay
+  doPay, shouhuo
 } from '../../api/goods.js'
 Page({
 
@@ -156,6 +156,15 @@ Page({
         this.setData({
             showPhoneConfirm: true
         })
+    },
+    confirms(e){
+      console.log(2)
+      shouhuo({
+        order_sn:e.detail.orderSn
+      }).then(res=>{
+        console.log(res)
+        this.update()
+      })
     },
     hidePhoneConfirm(e) {
         if (e.detail.code) {

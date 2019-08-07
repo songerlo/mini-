@@ -5,5 +5,5 @@ module.exports = {
   version: '1.0.0',
   navigateToMiniProgramAppIdList: [],
   errorPage: 'pages/error/error',
-  debug: true
+  debug: false
 }

@@ -4,6 +4,12 @@ export function indexList() { //首页商品列表
         url: '/IntegralIndex/index'
     })
 }
+export function shouhuo(params){
+  return request({
+    url: '/IntegralOrder/doFinish',
+    data:params
+  })
+}
 export function goodsDetails(params) { //商品详情
     return request({
         url: '/IntegralGoods/detail',

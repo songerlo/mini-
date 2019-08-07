@@ -22,6 +22,7 @@ Page({
      */
     onLoad: function(options) {
         if (Reflect.has(options, 'id')) this.init(options.id);
+        console.log(options)
     },
     init(id) {
         this.page = 1;

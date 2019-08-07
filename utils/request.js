@@ -8,10 +8,10 @@
  */
 import config from './config'
 module.exports = function(t) {
-    // wx.showLoading({
-    //   title: 'loading...',
-    //   mask: true
-    // })
+    wx.showLoading({
+      title: 'loading...',
+      mask: true
+    })
     let _t = this
     t = Object.assign({
         method: 'GET',
@@ -39,11 +39,23 @@ module.exports = function(t) {
                             url: '/pages/authorize/telephone',
                         })
                     } else {
-                        wx.showToast({
-                            icon: 'none',
-                            title: res.data.message,
-                            duration: 1500
-                        })
+                        // wx.showToast({
+                        //     icon: 'none',
+                        //     title: res.data.message,
+                        //     duration: 1500
+                        // })
+                      wx.showModal({
+                        // title: '提示111',
+                        content: res.data.message,
+                        showCancel: false,
+                        success(res) {
+                          if (res.confirm) {
+                            // console.log('用户点击确定')
+                          } else if (res.cancel) {
+                            // console.log('用户点击取消')
+                          }
+                        }
+                      })
                     }
                     return resolve(res.data);
                 } else {

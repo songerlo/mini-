@@ -13,7 +13,7 @@
     <van-tab title="待消耗">
         <view class='list' wx:if='{{awaitUseList.length>0}}'>
             <block wx:for="{{awaitUseList}}" wx:key="{{index}}">
-                <orders-item bindupdate='update' bindexchange='exchange' params="{{item}}"></orders-item>
+                <orders-item bindupdate='update' bindexchange='exchange'  bindconfirms='confirms' params="{{item}}"></orders-item>
             </block>
         </view>
         <view class="list" wx:else>
@@ -23,7 +23,7 @@
     <van-tab title="待发货">
         <view class='list' wx:if='{{awaitSendList.length>0}}'>
             <block wx:for="{{awaitSendList}}" wx:key="{{index}}">
-                <orders-item bindupdate='update' bindexchange='exchange' params="{{item}}"></orders-item>
+                <orders-item bindupdate='update' bindexchange='exchange'bindconfirms='confirms' params="{{item}}"></orders-item>
             </block>
         </view>
         <view class="list" wx:else>
@@ -33,7 +33,7 @@
     <van-tab title="待收货">
         <view class='list' wx:if='{{awaitReceiveList.length>0}}'>
             <block wx:for="{{awaitReceiveList}}" wx:key="{{index}}">
-                <orders-item bindupdate='update' bindexchange='exchange' params="{{item}}"></orders-item>
+                <orders-item bindupdate='update' bindexchange='exchange' bindconfirms='confirms' params="{{item}}"></orders-item>
             </block>
         </view>
         <view class="list" wx:else>
@@ -43,7 +43,7 @@
     <van-tab title="已完成">
         <view class='list' wx:if='{{stocksList.length>0}}'>
             <block wx:for="{{stocksList}}" wx:key="{{index}}">
-                <orders-item bindupdate='update' bindexchange='exchange' params="{{item}}"></orders-item>
+                <orders-item bindupdate='update' bindexchange='exchange' bindconfirms='confirms' params="{{item}}"></orders-item>
             </block>
         </view>
         <view class="list" wx:else>
@@ -53,7 +53,7 @@
     <van-tab title="已取消">
         <view class='list' wx:if='{{cancleList.length>0}}'>
             <block wx:for="{{cancleList}}" wx:key="{{index}}">
-                <orders-item bindupdate='update' bindexchange='exchange' params="{{item}}"></orders-item>
+                <orders-item bindupdate='update' bindexchange='exchange' bindconfirms='confirms' params="{{item}}"></orders-item>
             </block>
         </view>
         <view class="list" wx:else>
